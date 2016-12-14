@@ -11,7 +11,6 @@ var widthNormal = 50;
 
 function stylen() {
 
-
     var div1 = $('#div1');
     var div2 = $('#div2');
     var div3 = $('#div3');
@@ -21,6 +20,10 @@ function stylen() {
     var div7 = $('#div7');
     var div8 = $('#div8');
     var div9 = $('#div9');
+    var buttonDiv = $('#button');
+
+    var windowWidth = window.outerWidth;
+    leftStart = windowWidth/2 - (widthNormal*9 /2);
 
     div1.css({
         "top": topStart - div1.html() * 10,
@@ -82,15 +85,25 @@ function stylen() {
         "height": heightStart +div9.html() * 10,
         "backgroundColor": "darkgreen"
     });
+    buttonDiv.css({
+        "top": topStart + heightStart + 200,
+        "left": leftStart + (widthNormal*9)/2 -50
+    });
+
 }
+
 
 $(document).ready(function () {
     stylen();
+
     $('#button').click(function () {
         buttonItertator();
     });
 });
 
+$(window).resize(function () {
+    stylen();
+});
 
 
 function buttonItertator() {
