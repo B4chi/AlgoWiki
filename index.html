@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Algorithmen Wiki</title>
+    <script src="jquery-3.1.1.js"></script>
+    <style type="text/css">
+        body{
+            background-color: #292929;
+        }
+        h1{
+            text-align: center;
+        }
+        body nav {
+            position: relative;
+            top: 50pt;
+            width: 100pt;
+            font-weight: bold;
+        }
+        body nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        body nav ul li {
+            margin: 0;
+            padding: 0;
+        }
+        body nav ul li a{
+            text-decoration: none;
+            color: black;
+            display: block;
+            border: 1pt white solid;
+            padding: 10pt;
+        }
+
+        #content{
+            margin: 0 auto;
+            text-align: center;
+        }
+        .divs{
+            text-align: center;
+            position: fixed;
+            border: 2px solid white;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            font-size: 25pt;
+            text-shadow: black 0 0 6px;
+            color: white;
+            border-radius: 4px;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        var schritt = 1;
+
+        var topStart = 200;
+        var leftStart = 300;
+        var heightStart = 50;
+        var widthNormal = 50;
+
+        function stylen() {
+
+
+            var div1 = $('#div1');
+            var div2 = $('#div2');
+            var div3 = $('#div3');
+            var div4 = $('#div4');
+            var div5 = $('#div5');
+            var div6 = $('#div6');
+            var div7 = $('#div7');
+            var div8 = $('#div8');
+            var div9 = $('#div9');
+
+            div1.css({
+                "top": topStart - div1.html() * 10,
+                "left": leftStart,
+                "height": heightStart + div1.html() * 10,
+                "backgroundColor": "limegreen"
+            });
+            div2.css({
+                "top": topStart - div2.html() * 10,
+                "left": leftStart + widthNormal,
+                "height": heightStart + div2.html() * 10,
+                "backgroundColor": "blue"
+            });
+            div3.css({
+                "top": topStart - div3.html() * 10,
+                "left": leftStart + widthNormal*2,
+                "height": heightStart +div3.html() * 10,
+                "backgroundColor": "red"
+            });
+
+            div4.css({
+                "top": topStart-div4.html() * 10,
+                "left": leftStart + widthNormal*3,
+                "height": heightStart +div4.html() * 10,
+                "backgroundColor": "yellow"
+            });
+
+            div5.css({
+                "top": topStart -div5.html() * 10,
+                "left": leftStart + widthNormal*4,
+                "height": heightStart +div5.html() * 10,
+                "backgroundColor": "aqua"
+            });
+
+            div6.css({
+                "top": topStart -div6.html() * 10,
+                "left": leftStart + widthNormal*5,
+                "height": heightStart +div6.html() * 10,
+                "backgroundColor": "orange"
+            });
+
+            div7.css({
+                "top": topStart -div7.html() * 10,
+                "left": leftStart + widthNormal*6,
+                "height": heightStart +div7.html() * 10,
+                "backgroundColor": "darkred"
+            });
+
+            div8.css({
+                "top": topStart -div8.html() * 10,
+                "left": leftStart + widthNormal*7,
+                "height": heightStart +div8.html() * 10,
+                "backgroundColor": "green"
+            });
+
+            div9.css({
+                "top": topStart -div9.html() * 10,
+                "left": leftStart + widthNormal*8,
+                "height": heightStart +div9.html() * 10,
+                "backgroundColor": "darkgreen"
+            });
+        }
+
+        $(document).ready(function () {
+            stylen();
+        });
+
+
+
+
+
+        function buttonItertator() {
+            switch (schritt){
+                case 1:
+                    schritt1();
+                    break;
+                case 2:
+                    schritt2();
+                    break;
+                case 3:
+                    schritt3();
+                    break;
+                case 4:
+                    schritt4();
+                    break;
+                case 5:
+                    schritt5();
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    break;
+                case 11:
+                    break;
+            }
+
+        }
+
+        function schritt1() {
+            $('#div1').css("backgroundColor", "#757575");
+            schritt++;
+        }
+
+        function schritt2() {
+            $("#div2").animate({"top": topStart +75});
+            schritt++;
+
+        }
+        function schritt3() {
+            $("#div1").animate({"left": leftStart + widthNormal});
+            $("#div2").animate({"left": leftStart});
+            schritt++;
+
+        }
+        function schritt4() {
+            $("#div2").animate({"top": topStart - $("#div2").html() *10})
+            $('#div2').css("backgroundColor", "#757575");
+            schritt++;
+        }
+        function schritt5() {
+            $("#div3").animate({"top": topStart + 75})
+            schritt++;
+
+        }
+
+
+
+
+
+    </script>
+</head>
+<body>
+<h1>AlgoWiki</h1>
+<nav>
+    <ul>
+        <li><a href="#">Insection Sort</a></li>
+        <li><a href="#">Bubblesort</a></li>
+        <li><a href="#">Quicksort</a></li>
+        <li><a href="#">Mergesort</a></li>
+    </ul>
+</nav>
+<div id="content">
+    <div id="div1" class="divs">5</div>
+    <div id="div2" class="divs">3</div>
+    <div id="div3" class="divs">4</div>
+    <div id="div4" class="divs">7</div>
+    <div id="div5" class="divs">2</div>
+    <div id="div6" class="divs">8</div>
+    <div id="div7" class="divs">6</div>
+    <div id="div8" class="divs">9</div>
+    <div id="div9" class="divs">1</div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <input type="button" onclick="buttonItertator()" value="Testen">
+</div>
+
+
+
+</body>
+</html>
