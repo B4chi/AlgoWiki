@@ -86,68 +86,190 @@ function stylen() {
 
 $(document).ready(function () {
     stylen();
+    $('#button').click(function () {
+        buttonItertator();
+    });
 });
 
 
 
-
-
 function buttonItertator() {
+    var div1 = $('#div1');
+    var div2 = $('#div2');
+    var div3 = $('#div3');
+    var div4 = $('#div4');
+    var div5 = $('#div5');
+    var div6 = $('#div6');
+    var div7 = $('#div7');
+    var div8 = $('#div8');
+    var div9 = $('#div9');
     switch (schritt){
         case 1:
-            schritt1();
+            setGray(div1);
+            schritt++;
             break;
         case 2:
-            schritt2();
+            animateOutLine(div2);
+            schritt++;
             break;
         case 3:
-            schritt3();
+            animateLeft(div1, 1);
+            animateLeft(div2, 0);
+            schritt++;
             break;
         case 4:
-            schritt4();
+            animateInLine(div2);
+            //setGray(div2);
+            schritt++;
             break;
         case 5:
-            schritt5();
+            animateOutLine(div3);
+            schritt++;
             break;
         case 6:
+            animateLeft(div3, 1);
+            animateLeft(div1, 2);
+            schritt++;
             break;
         case 7:
+            animateInLine(div3);
+            setGray(div3);
+            schritt++;
             break;
         case 8:
+            animateOutLine(div4);
+            schritt++;
             break;
         case 9:
+            animateInLine(div4);
+            schritt++;
             break;
         case 10:
+            animateOutLine(div5);
+            schritt++;
             break;
         case 11:
+            animateLeft(div5, 3);
+            animateLeft(div4, 4);
+            schritt++;
             break;
+        case 12:
+            animateLeft(div5, 2);
+            animateLeft(div1, 3);
+            schritt++;
+            break;
+        case 13:
+            animateLeft(div5, 1);
+            animateLeft(div3, 2);
+            schritt++;
+            break;
+        case 14:
+            animateLeft(div5, 0);
+            animateLeft(div2, 1);
+            schritt++;
+            break;
+        case 15:
+            animateInLine(div5);
+            schritt++;
+            break;
+        case 16:
+            animateOutLine(div6);
+            schritt++;
+            break;
+        case 17:
+            animateInLine(div6);
+            schritt++;
+            break;
+        case 18:
+            animateOutLine(div7);
+            schritt++;
+            break;
+        case 19:
+            animateLeft(div7, 5);
+            animateLeft(div6, 6);
+            schritt++;
+            break;
+        case 20:
+            animateLeft(div7, 4);
+            animateLeft(div4, 5);
+            schritt++;
+            break;
+        case 21:
+            animateInLine(div7);
+            schritt++;
+            break;
+        case 22:
+            animateOutLine(div8);
+            schritt++;
+            break;
+        case 23:
+            animateInLine(div8);
+            schritt++;
+            break;
+        case 24:
+            animateOutLine(div9);
+            schritt++;
+            break;
+        case 25:
+            animateLeft(div9, 7);
+            animateLeft(div8, 8);
+            schritt++;
+            break;
+        case 26:
+            animateLeft(div9, 6);
+            animateLeft(div6, 7);
+            schritt++;
+            break;
+        case 27:
+            animateLeft(div9, 5);
+            animateLeft(div4, 6);
+            schritt++;
+            break;
+        case 28:
+            animateLeft(div9, 4);
+            animateLeft(div7, 5);
+            schritt++;
+            break;
+        case 29:
+            animateLeft(div9, 3);
+            animateLeft(div1, 4);
+            schritt++;
+            break;
+        case 30:
+            animateLeft(div9, 2);
+            animateLeft(div3, 3);
+            schritt++;
+            break;
+        case 31:
+            animateLeft(div9, 1);
+            animateLeft(div2, 2);
+            schritt++;
+            break;
+        case 32:
+            animateLeft(div9, 0);
+            animateLeft(div5, 1);
+            schritt++;
+            break;
+        case 33:
+            animateInLine(div9);
+            schritt++;
+            break;
+
     }
-
 }
 
-function schritt1() {
-    $('#div1').css("backgroundColor", "#757575");
-    schritt++;
-}
 
-function schritt2() {
-    $("#div2").animate({"top": topStart +75});
-    schritt++;
-
+function animateLeft(div, pos) {
+    div.animate({"left": leftStart +  widthNormal * pos});
 }
-function schritt3() {
-    $("#div1").animate({"left": leftStart + widthNormal});
-    $("#div2").animate({"left": leftStart});
-    schritt++;
-
+function setGray(div) {
+    div.css("backgroundColor", "#757575");
 }
-function schritt4() {
-    $("#div2").animate({"top": topStart - $("#div2").html() *10});
-    $('#div2').css("backgroundColor", "#757575");
-    schritt++;
+function animateOutLine(div) {
+    div.animate({"top": topStart + 75});
 }
-function schritt5() {
-    $("#div3").animate({"top": topStart + 75})
-    schritt++;
-
+function animateInLine(div) {
+    div.animate({"top": topStart - div.html() *10},function () {
+        setGray(div)
+    });
 }
