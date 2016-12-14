@@ -22,6 +22,23 @@ function stylen() {
     var div7 = $('#div7');
     var div8 = $('#div8');
     var div9 = $('#div9');
+    var zeig1 = $('#zeig1');
+    var zeig2 = $('#zeig2');
+
+
+    zeig1.css({
+        "top": topStart - zeig1.html() * 5,
+        "left": leftStart,
+        "height": heightStart + zeig1.html() * 5,
+        "backgroundColor": "grey"
+    });
+
+    zeig2.css({
+        "top": topStart - zeig2.html() * 5,
+        "left": leftStart + widthNormal*4,
+        "height": heightStart + zeig2.html() * 5,
+        "backgroundColor": "grey"
+    });
 
     div1.css({
         "top": topStart - div1.html() * 10,
@@ -93,6 +110,7 @@ $(document).ready(function () {
 function buttonItertator() {
     switch (schritt){
         case 1:
+            schritt1();
             break;
         case 2:
             break;
@@ -115,5 +133,10 @@ function buttonItertator() {
         case 11:
             break;
     }
+}
 
+function schritt1(){
+
+
+    schritt++;
 }
