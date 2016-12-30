@@ -35,6 +35,8 @@ function stylen() {
     var div8 = $('#div8');
     var div9 = $('#div9');
     var buttonDiv = $('#button');
+    var text = $('.textField');
+
 
     var windowWidth = window.outerWidth;
     leftStart = windowWidth / 2 - (widthNormal * 9 / 2);
@@ -102,6 +104,12 @@ function stylen() {
     buttonDiv.css({
         "top": topStart + heightStart + 200,
         "left": leftStart + (widthNormal * 9) / 2 - 50
+    });
+
+    text.css({
+        "top": topStart + 80,
+        "left": leftStart,
+        "width": widthNormal * 9 - 5
     });
 
 }
