@@ -34,8 +34,10 @@ function stylen() {
     var div7 = $('#div7');
     var div8 = $('#div8');
     var div9 = $('#div9');
-    var buttonDiv = $('#button');
+    var buttonTesten = $('#buttonTesten');
     var text = $('.textField');
+    var klammer = $('#klammer');
+    var buttonReset = $('#resetButton');
 
 
     var windowWidth = window.outerWidth;
@@ -101,13 +103,19 @@ function stylen() {
         "height": heightStart + div9.html() * 10,
         "backgroundColor": "darkgreen"
     });
-    buttonDiv.css({
+    buttonTesten.css({
         "top": topStart + heightStart + 200,
         "left": leftStart + (widthNormal * 9) / 2 - 50
     });
 
+    klammer.css({
+        "top": topStart + 55,
+        "left": leftStart + 15,
+        "visibility": "hidden"
+    });
+
     text.css({
-        "top": topStart + 80,
+        "top": topStart + 100,
         "left": leftStart,
         "width": widthNormal * 9 - 5
     });
@@ -125,10 +133,13 @@ function buttonItertator() {
     var div6 = $('#div7');
     var div9 = $('#div8');
     var div1 = $('#div9');
+    var klammer = $('#klammer');
+
     switch (schritt) {
         case 1:
-            animateOutLine(div5);
-            animateOutLine(div3);
+            klammer.css({
+                "visibility": "visible"
+            });
             schritt++;
             break;
         case 2:
@@ -136,467 +147,245 @@ function buttonItertator() {
             schritt++;
             break;
         case 3:
-            animateInLine(div5);
-            animateInLine(div3);
+            moveKlammer(klammer, 2);
             schritt++;
             break;
         case 4:
-            animateOutLine(div5);
-            animateOutLine(div4);
+            swap(div5, 2, div4, 1);
             schritt++;
             break;
         case 5:
-            swap(div5, 2, div4, 1)
+            moveKlammer(klammer, 3);
             schritt++;
             break;
         case 6:
-            animateInLine(div5);
-            animateInLine(div4);
+            moveKlammer(klammer, 4);
             schritt++;
             break;
         case 7:
-            animateOutLine(div5);
-            animateOutLine(div7);
-            schritt++;
-            break;
-        case 8:
-            animateInLine(div5);
-            animateInLine(div7);
-            schritt++;
-            break;
-        case 9:
-            animateOutLine(div7);
-            animateOutLine(div2);
-            schritt++;
-            break;
-        case 10:
             swap(div7, 4, div2, 3);
             schritt++;
             break;
-        case 11:
-            animateInLine(div7);
-            animateInLine(div2);
+        case 8:
+            moveKlammer(klammer, 5);
             schritt++;
             break;
-        case 12:
-            animateOutLine(div7);
-            animateOutLine(div8);
+        case 9:
+            moveKlammer(klammer, 6);
             schritt++;
             break;
-        case 13:
-            animateInLine(div7);
-            animateInLine(div8);
-            schritt++;
-            break;
-        case 14:
-            animateOutLine(div8);
-            animateOutLine(div6);
-            schritt++;
-            break;
-        case 15:
+        case 10:
             swap(div8, 6, div6, 5);
             schritt++;
             break;
-        case 16:
-            animateInLine(div8);
-            animateInLine(div6);
+        case 11:
+            moveKlammer(klammer, 7);
             schritt++;
             break;
-        case 17:
-            animateOutLine(div8);
-            animateOutLine(div9);
+        case 12:
+            moveKlammer(klammer, 8);
             schritt++;
             break;
-        case 18:
-            animateInLine(div8);
-            animateInLine(div9);
-            schritt++;
-            break;
-        case 19:
-            animateOutLine(div9);
-            animateOutLine(div1);
-            schritt++;
-            break;
-        case 20:
+        case 13:
             swap(div9, 8, div1, 7);
             schritt++;
             break;
-        case 21:
-            animateInLine(div9);
-            animateInLine(div1);
+
+
+        case 14:
             setGray(div9);
+            moveKlammer(klammer, 1);
             schritt++;
             break;
-
-
-        case 22:
-            animateOutLine(div3);
-            animateOutLine(div4);
+        case 15:
+            moveKlammer(klammer, 2);
             schritt++;
             break;
-        case 23:
-            animateInLine(div3);
-            animateInLine(div4);
+        case 16:
+            moveKlammer(klammer, 3);
             schritt++;
             break;
-        case 24:
-            animateOutLine(div4);
-            animateOutLine(div5);
-            schritt++;
-            break;
-        case 25:
-            animateInLine(div4);
-            animateInLine(div5);
-            schritt++;
-            break;
-        case 26:
-            animateOutLine(div5);
-            animateOutLine(div2);
-            schritt++;
-            break;
-        case 27:
+        case 17:
             swap(div5, 3, div2, 2);
             schritt++;
             break;
-        case 28:
-            animateInLine(div5);
-            animateInLine(div2);
+        case 18:
+            moveKlammer(klammer, 4);
             schritt++;
             break;
-        case 29:
-            animateOutLine(div5);
-            animateOutLine(div7);
+        case 19:
+            moveKlammer(klammer, 5);
             schritt++;
             break;
-        case 30:
-            animateInLine(div5);
-            animateInLine(div7);
-            schritt++;
-            break;
-        case 31:
-            animateOutLine(div7);
-            animateOutLine(div6);
-            schritt++;
-            break;
-        case 32:
+        case 20:
             swap(div7, 5, div6, 4);
             schritt++;
             break;
-        case 33:
-            animateInLine(div7);
-            animateInLine(div6);
+        case 21:
+            moveKlammer(klammer, 6);
             schritt++;
             break;
-        case 34:
-            animateOutLine(div7);
-            animateOutLine(div8);
+        case 22:
+            moveKlammer(klammer, 7);
             schritt++;
             break;
-        case 35:
-            animateInLine(div7);
-            animateInLine(div8);
-            schritt++;
-            break;
-        case 36:
-            animateOutLine(div8);
-            animateOutLine(div1);
-            schritt++;
-            break;
-        case 37:
+        case 23:
             swap(div8, 7, div1, 6);
             schritt++;
             break;
-        case 38:
-            animateInLine(div8);
-            animateInLine(div1);
+
+
+        case 24:
             setGray(div8);
+            moveKlammer(klammer, 1);
+            schritt++;
+            break;
+        case 25:
+            moveKlammer(klammer, 2);
+            schritt++;
+            break;
+        case 26:
+            swap(div4, 2, div2, 1);
+            schritt++;
+            break;
+        case 27:
+            moveKlammer(klammer, 3);
+            schritt++;
+            break;
+        case 28:
+            moveKlammer(klammer, 4);
+            schritt++;
+            break;
+        case 29:
+            moveKlammer(klammer, 5);
+            schritt++;
+            break;
+        case 30:
+            moveKlammer(klammer, 6);
+            schritt++;
+            break;
+        case 31:
+            swap(div7, 6, div1, 5);
+            schritt++;
+            break;
+
+
+        case 32:
+            setGray(div7);
+            moveKlammer(klammer, 1);
+            schritt++;
+            break;
+        case 33:
+            swap(div3, 1, div2, 0);
+            schritt++;
+            break;
+        case 34:
+            moveKlammer(klammer, 2);
+            schritt++;
+            break;
+        case 35:
+            moveKlammer(klammer, 3);
+            schritt++;
+            break;
+        case 36:
+            moveKlammer(klammer, 4);
+            schritt++;
+            break;
+        case 37:
+            moveKlammer(klammer, 5);
+            schritt++;
+            break;
+        case 38:
+            swap(div6, 5, div1, 4);
             schritt++;
             break;
 
 
         case 39:
-            animateOutLine(div3);
-            animateOutLine(div4);
+            setGray(div6);
+            moveKlammer(klammer, 1);
             schritt++;
             break;
         case 40:
-            animateInLine(div3);
-            animateInLine(div4);
+            moveKlammer(klammer, 2);
             schritt++;
             break;
         case 41:
-            animateOutLine(div4);
-            animateOutLine(div2);
+            moveKlammer(klammer, 3);
             schritt++;
             break;
         case 42:
-            swap(div4, 2, div2, 1);
+            moveKlammer(klammer, 4);
             schritt++;
             break;
         case 43:
-            animateInLine(div4);
-            animateInLine(div2);
-            schritt++;
-            break;
-        case 44:
-            animateOutLine(div4);
-            animateOutLine(div5);
-            schritt++;
-            break;
-        case 45:
-            animateInLine(div4);
-            animateInLine(div5);
-            schritt++;
-            break;
-        case 46:
-            animateOutLine(div5);
-            animateOutLine(div6);
-            schritt++;
-            break;
-        case 47:
-            animateInLine(div5);
-            animateInLine(div6);
-            schritt++;
-            break;
-        case 48:
-            animateOutLine(div6);
-            animateOutLine(div7);
-            schritt++;
-            break;
-        case 49:
-            animateInLine(div6);
-            animateInLine(div7);
-            schritt++;
-            break;
-        case 50:
-            animateOutLine(div7);
-            animateOutLine(div1);
-            schritt++;
-            break;
-        case 51:
-            swap(div7, 6, div1, 5);
-            schritt++;
-            break;
-        case 52:
-            animateInLine(div7);
-            animateInLine(div1);
-            setGray(div7);
-            schritt++;
-            break;
-        case 53:
-            animateOutLine(div3);
-            animateOutLine(div2);
-            schritt++;
-            break;
-        case 54:
-            swap(div3, 1, div2, 0);
-            schritt++;
-            break;
-        case 55:
-            animateInLine(div3);
-            animateInLine(div2);
-            schritt++;
-            break;
-        case 56:
-            animateOutLine(div3);
-            animateOutLine(div4);
-            schritt++;
-            break;
-        case 57:
-            animateInLine(div3);
-            animateInLine(div4);
-            schritt++;
-            break;
-        case 58:
-            animateOutLine(div4);
-            animateOutLine(div5);
-            schritt++;
-            break;
-        case 59:
-            animateInLine(div4);
-            animateInLine(div5);
-            schritt++;
-            break;
-        case 60:
-            animateOutLine(div5);
-            animateOutLine(div6);
-            schritt++;
-            break;
-        case 61:
-            animateInLine(div5);
-            animateInLine(div6);
-            schritt++;
-            break;
-        case 62:
-            animateOutLine(div6);
-            animateOutLine(div1);
-            schritt++;
-            break;
-        case 63:
-            swap(div6, 5, div1, 4);
-            schritt++;
-            break;
-        case 64:
-            animateInLine(div6);
-            animateInLine(div1);
-            setGray(div6);
-            schritt++;
-            break;
-
-
-        case 65:
-            animateOutLine(div2);
-            animateOutLine(div3);
-            schritt++;
-            break;
-        case 66:
-            animateInLine(div2);
-            animateInLine(div3);
-            schritt++;
-            break;
-        case 67:
-            animateOutLine(div3);
-            animateOutLine(div4);
-            schritt++;
-            break;
-        case 68:
-            animateInLine(div3);
-            animateInLine(div4);
-            schritt++;
-            break;
-        case 69:
-            animateOutLine(div4);
-            animateOutLine(div5);
-            schritt++;
-            break;
-        case 70:
-            animateInLine(div4);
-            animateInLine(div5);
-            schritt++;
-            break;
-        case 71:
-            animateOutLine(div5);
-            animateOutLine(div1);
-            schritt++;
-            break;
-        case 72:
             swap(div5, 4, div1, 3);
             schritt++;
             break;
-        case 73:
-            animateInLine(div5);
-            animateInLine(div1);
+
+
+        case 44:
             setGray(div5);
+            moveKlammer(klammer, 1);
             schritt++;
             break;
-
-
-        case 74:
-            animateOutLine(div2);
-            animateOutLine(div3);
+        case 45:
+            moveKlammer(klammer, 2);
             schritt++;
             break;
-        case 75:
-            animateInLine(div2);
-            animateInLine(div3);
+        case 46:
+            moveKlammer(klammer, 3);
             schritt++;
             break;
-        case 76:
-            animateOutLine(div3);
-            animateOutLine(div4);
-            schritt++;
-            break;
-        case 77:
-            animateInLine(div3);
-            animateInLine(div4);
-            schritt++;
-            break;
-        case 78:
-            animateOutLine(div4);
-            animateOutLine(div1);
-            schritt++;
-            break;
-        case 79:
+        case 47:
             swap(div4, 3, div1, 2);
             schritt++;
             break;
-        case 80:
-            animateInLine(div4);
-            animateInLine(div1);
+
+
+        case 48:
             setGray(div4);
+            moveKlammer(klammer, 1);
             schritt++;
             break;
-
-
-        case 81:
-            animateOutLine(div2);
-            animateOutLine(div3);
+        case 49:
+            moveKlammer(klammer, 2);
             schritt++;
             break;
-        case 82:
-            animateInLine(div2);
-            animateInLine(div3);
-            schritt++;
-            break;
-        case 83:
-            animateOutLine(div3);
-            animateOutLine(div1);
-            schritt++;
-            break;
-        case 84:
+        case 50:
             swap(div3, 2, div1, 1);
             schritt++;
             break;
-        case 85:
-            animateInLine(div3);
-            animateInLine(div1);
+
+
+        case 51:
             setGray(div3);
+            moveKlammer(klammer, 1);
             schritt++;
             break;
-
-
-        case 86:
-            animateOutLine(div2);
-            animateOutLine(div1);
-            schritt++;
-            break;
-        case 87:
+        case 52:
             swap(div2, 1, div1, 0);
             schritt++;
             break;
-        case 88:
-            animateInLine(div2);
-            animateInLine(div1);
+        case 53:
             setGray(div2);
             setGray(div1);
-            schritt++;
-            break;
-
     }
-
-
 }
 
+function reset() {
+    schritt = 1;
+    stylen();
+}
+
+function moveKlammer(div, pos) {
+    div.animate({"left": leftStart + widthNormal * (pos - 1) + 15});
+}
 function swap(divA, posA, divB, posB) {
-    divA.animate({"left": leftStart + widthNormal * posA})
+    divA.animate({"left": leftStart + widthNormal * posA});
     divB.animate({"left": leftStart + widthNormal * posB});
-}
-
-function animateLeft(div, pos) {
-    div.animate({"left": leftStart + widthNormal * pos});
-}
-
-function animateRight(div, pos) {
-    div.animate({"right": leftStart + widthNormal * pos});
 }
 
 function setGray(div) {
     div.css("backgroundColor", "#757575");
-}
-function animateOutLine(div) {
-    div.animate({"top": topStart + 75});
-}
-function animateInLine(div) {
-    div.animate({"top": topStart - div.html() * 10}, function () {
-    });
 }

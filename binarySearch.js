@@ -39,6 +39,7 @@ function stylen() {
     var seperator = $('#seperator');
     var search = $('#search');
     var text = $('.textField');
+    var resetButton = $('#resetButton');
 
     var windowWidth = window.outerWidth;
     leftStart = windowWidth / 2 - (widthNormal * 9 / 2);
@@ -107,15 +108,16 @@ function stylen() {
         "top": topStart + heightStart + 200,
         "left": leftStart + (widthNormal * 9) / 2 - 50
     });
-
-    seperator.css({
-        "top": topStart - 120,
-        "left": leftStart + widthNormal * 4.89
+    arrow.css({
+        "top": topStart + 55,
+        "left": leftStart + 6 + widthNormal * 4,
+        "visibility": "hidden"
     });
 
-    arrow.css({
-        "top": topStart + 60,
-        "left": leftStart + 5 + widthNormal * 4
+    seperator.css({
+        "top": topStart - 118,
+        "left": leftStart + widthNormal * 4.89,
+        "visibility": "hidden"
     });
 
     search.css({
@@ -127,6 +129,11 @@ function stylen() {
         "top": topStart + 100,
         "left": leftStart,
         "width": widthNormal * 9 - 5
+    });
+
+    resetButton.css({
+        "top": topStart + heightStart + 200,
+        "left": leftStart + (widthNormal * 9) / 2 - 50
     });
 }
 
@@ -189,8 +196,11 @@ function buttonItertator() {
             schritt++;
             break;
     }
+}
 
-
+function reset() {
+    schritt = 1;
+    stylen();
 }
 
 function showArrow(div, visible) {
@@ -200,12 +210,10 @@ function showArrow(div, visible) {
 }
 
 function moveArrow(div, pos) {
-
     div.css({
-        "top": topStart + 60,
-        "left": leftStart + 5 + widthNormal * (pos - 1)
+        "top": topStart + 55,
+        "left": leftStart + 6 + widthNormal * (pos - 1)
     });
-
 }
 
 function showSeperator(div, visible) {
@@ -215,34 +223,12 @@ function showSeperator(div, visible) {
 }
 
 function moveSeperator(div, pos) {
-
     div.css({
-        "top": topStart - 120,
+        "top": topStart - 118,
         "left": leftStart + widthNormal * (pos - 0.11)
     });
-
-}
-
-function swap(divA, posA, divB, posB) {
-    divA.animate({"left": leftStart + widthNormal * posA})
-    divB.animate({"left": leftStart + widthNormal * posB});
-}
-
-function animateLeft(div, pos) {
-    div.animate({"left": leftStart + widthNormal * pos});
-}
-
-function animateRight(div, pos) {
-    div.animate({"right": leftStart + widthNormal * pos});
 }
 
 function setGray(div) {
     div.css("backgroundColor", "#757575");
-}
-function animateOutLine(div) {
-    div.animate({"top": topStart + 75});
-}
-function animateInLine(div) {
-    div.animate({"top": topStart - div.html() * 10}, function () {
-    });
 }
