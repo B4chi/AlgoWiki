@@ -7,8 +7,9 @@ h1{
 body nav {
     position: relative;
     top: 50pt;
-    width: 100pt;
+    width: 150pt;
     font-weight: bold;
+    font-size: large;
 }
 body nav ul {
     list-style: none;
@@ -44,12 +45,18 @@ body nav ul li a{
     color: white;
     border-radius: 4px;
 }
-#button{
+#buttonNext {
     position: fixed;
     width: 100px;
     height: 40px;
     border: 1px black solid;
-
+    background-color: darkgoldenrod;
+    font-size: large;
+    border-radius: 3px;
+    box-shadow: 0  5px 5px darkslategrey;
+}
+#buttonNext:active {
+    transform: translateY(3px);
 }
 
 #seperator{
@@ -87,7 +94,8 @@ body nav ul li a{
     position: fixed;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     border: 1px solid black;
     height: 100px;
+    font-size: large;
 }

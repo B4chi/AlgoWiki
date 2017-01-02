@@ -188,7 +188,7 @@ function buttonItertator() {
             break;
         case 11:
             setZeigerHalf(5);
-            animateLeft(zeig2,5);
+            animateLeft(zeig2,5.5);
             schritt++;
             break;
         case 12:
