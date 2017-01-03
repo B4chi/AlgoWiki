@@ -131,12 +131,12 @@ function stylen() {
 
     buttonReset.css({
         "top": topStart + heightStart + 200,
-        "left": leftStart + (widthNormal * 9) / 2 - 50
+        "left": leftStart + (widthNormal * 9) / 2 -120
     });
 
     buttonNext.css({
         "top": topStart + heightStart + 200,
-        "left": leftStart + (widthNormal * 9) / 2 - 50
+        "left": leftStart + (widthNormal * 9) / 2 + 20
     });
 }
 
