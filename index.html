@@ -6,20 +6,45 @@
     <script src="jquery-3.1.1.js"></script>
     <link rel="stylesheet" href="theme.css">
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#insertionSort').click(function () {
+                $('#content').load("insertionSortAjax.html");
+            });
+            $('#bubbleSort').click(function () {
 
+            });
+            $('#quickSort').click(function () {
+
+            });
+            $('#mergeSort').click(function () {
+
+            });
+            $('#binarySearch').click(function () {
+
+            })
+        });
+
+
+
+    </script>
 
 </head>
 <body>
 <h1>AlgoWiki</h1>
 <nav>
     <ul>
-        <li><a href="insertionSort.html">Insection Sort</a></li>
-        <li><a href="#">Bubblesort</a></li>
-        <li><a href="quicksort.html">Quicksort</a></li>
-        <li><a href="#">Mergesort</a></li>
-        <li><a href="binarySearch.html">Binary Search</a></li>
+        <li id="insertionSort">Insertionsort</li>
+        <li id="bubbleSort">Bubblesort</li>
+        <li id="quickSort">Quicksort</li>
+        <li id="mergeSort">Mergesort</li>
+        <li id="binarySearch">Binary Search</li>
     </ul>
 </nav>
+
+<div id="content">
+
+</div>
 
 
 

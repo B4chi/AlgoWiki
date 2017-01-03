@@ -338,3 +338,8 @@ function setText(text) {
     div.empty();
     div.append(document.createTextNode(text));
 }
+
+function reset() {
+    schritt =1;
+    stylen();
+}
