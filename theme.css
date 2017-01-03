@@ -18,15 +18,13 @@ body nav ul {
 }
 body nav ul li {
     margin: 0;
-    padding: 0;
-}
-body nav ul li a{
-    text-decoration: none;
-    color: black;
+    padding: 10px;
+    cursor: pointer;
     display: block;
-    border: 1pt white solid;
-    padding: 10pt;
+    border: 1px black solid;
+    font-size: larger;
 }
+
 
 #content{
     margin: 0 auto;
@@ -97,5 +95,6 @@ body nav ul li a{
     align-items: center;
     border: 1px solid black;
     height: 100px;
-    font-size: large;
+    font-size: larger;
+    padding: 15px;
 }
