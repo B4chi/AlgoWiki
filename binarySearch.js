@@ -9,19 +9,19 @@ var leftStart = 300;
 var heightStart = 50;
 var widthNormal = 50;
 
-
 $(document).ready(function () {
     stylen();
 
-    $('#button').click(function () {
+    $('#buttonNext').click(function () {
         buttonItertator();
+    });
+
+    $('#buttonReset').click(function () {
+        stylen();
     });
 
 });
 
-$(window).resize(function () {
-    stylen();
-});
 
 function stylen() {
 
@@ -34,12 +34,12 @@ function stylen() {
     var div7 = $('#div7');
     var div8 = $('#div8');
     var div9 = $('#div9');
-    var buttonDiv = $('#button');
     var arrow = $('#arrowUP');
     var seperator = $('#seperator');
     var search = $('#search');
-    var text = $('.textField');
-    var resetButton = $('#resetButton');
+    var textField = $('.textField');
+    var buttonReset = $('#buttonReset');
+    var buttonNext = $('#buttonNext');
 
     var windowWidth = window.outerWidth;
     leftStart = windowWidth / 2 - (widthNormal * 9 / 2);
@@ -104,10 +104,7 @@ function stylen() {
         "height": heightStart + div9.html() * 10,
         "backgroundColor": "darkgreen"
     });
-    buttonDiv.css({
-        "top": topStart + heightStart + 200,
-        "left": leftStart + (widthNormal * 9) / 2 - 50
-    });
+
     arrow.css({
         "top": topStart + 55,
         "left": leftStart + 6 + widthNormal * 4,
@@ -125,13 +122,19 @@ function stylen() {
         "left": leftStart + 5
     });
 
-    text.css({
+    textField.css({
         "top": topStart + 100,
         "left": leftStart,
         "width": widthNormal * 9 - 5
     });
+    textField.text("Binary Search sucht ein Element in einer vorsortierten Liste. Der Algorithmus arbeitet rekursiv. In unserem Beispiel wollen wir nach der Zahl 6 suchen.");
 
-    resetButton.css({
+    buttonReset.css({
+        "top": topStart + heightStart + 200,
+        "left": leftStart + (widthNormal * 9) / 2 - 50
+    });
+
+    buttonNext.css({
         "top": topStart + heightStart + 200,
         "left": leftStart + (widthNormal * 9) / 2 - 50
     });
@@ -150,19 +153,24 @@ function buttonItertator() {
     var div1 = $('#div9');
     var arrow = $('#arrowUP');
     var seperator = $('#seperator');
+    var textField = $('.textField');
 
     switch (schritt) {
         case 1:
+            textField.text("Zu Beginn steht der Zeiger auf dem mittlersten Element der Liste. Falls die Liste eine gerade Anzahl von Elementen besitzt wird das erste, der beiden in Frage kommenden Elemente gewählt.");
             moveArrow(arrow, 5);
             showArrow(arrow, "visible");
             schritt++;
             break;
         case 2:
+            textField.text("Nun wird die entsprechende Zahl, in diesem Falle die 5, mit unserer gesuchten Zahl 6 verglichen. " +
+                "Da die Zahl 5 kleiner ist, als unsere gesuchte Zahl, können wir sicher sein, dass die Menge aller Elemente links von dem Zeiger, inklusive der 5 unser gesuchtes Element NICHT enthalten kann.");
             moveSeperator(seperator, 5);
             showSeperator(seperator, "visible");
             schritt++;
             break;
         case 3:
+            textField.text("Diese Elemente brauchen wir im folgenden nicht mehr betrachten.");
             showArrow(arrow, "hidden");
             showSeperator(seperator, "hidden");
             setGray(div1);
@@ -173,16 +181,19 @@ function buttonItertator() {
             schritt++;
             break;
         case 4:
+            textField.text("Die übrigen Elemente werden nun als neue Teilliste genommen. Der Zeiger steht wieder auf dem mittleren Element, dieses mal die 7.");
             moveArrow(arrow, 7);
             showArrow(arrow, "visible");
             schritt++;
             break;
         case 5:
+            textField.text("Nun vergleichen wir die 7 mit der gesuchten Zahl 6. Da sie größer ist als die 6 können wir wieder sicher sein, dass alle Elemente rechts von der 7, inklusive der 7 selbst, unsere Lösung nicht enthalten können.");
             moveSeperator(seperator, 6);
             showSeperator(seperator, "visible");
             schritt++;
             break;
         case 6:
+            textField.text("Auch diese Elemente brauchen wir im folgenden nicht mehr betrachten.");
             showArrow(arrow, "hidden");
             showSeperator(seperator, "hidden");
             setGray(div7);
@@ -191,10 +202,17 @@ function buttonItertator() {
             schritt++;
             break;
         case 7:
+            textField.text("Alle übrigen Elemente werden nun wieder als neue Teilliste genommen. In unserem Beispiel bemerken wir, dass die Liste aber nur noch ein Element enthält. " +
+                "Dieses wird wieder mit der gesuchten Zahl 6 verglichen. Wir sehen, dass 6 = 6 und haben somit eine Lösung gefunden.");
             moveArrow(arrow, 6);
             showArrow(arrow, "visible");
             schritt++;
             break;
+        case 8:
+            textField.text("Der Algorithmus arbeitet rekursiv durch Abarbeitung immer kleiner werdender Teillisten. " +
+                "Dies geht jedes mal so lange, bis der Elementarfall eintritt, dass nur noch ein einziges Element in der Teilliste vorhanden ist. " +
+                "Durch die Rekursion arbeitet der Algorithmus außerordentlich effizient.");
+
     }
 }
 

@@ -9,19 +9,19 @@ var leftStart = 300;
 var heightStart = 50;
 var widthNormal = 50;
 
-
 $(document).ready(function () {
     stylen();
 
-    $('#button').click(function () {
+    $('#buttonNext').click(function () {
         buttonItertator();
+    });
+
+    $('#buttonReset').click(function () {
+        stylen();
     });
 
 });
 
-$(window).resize(function () {
-    stylen();
-});
 
 function stylen() {
 
@@ -34,10 +34,10 @@ function stylen() {
     var div7 = $('#div7');
     var div8 = $('#div8');
     var div9 = $('#div9');
-    var buttonTesten = $('#buttonTesten');
     var text = $('.textField');
     var klammer = $('#klammer');
-    var buttonReset = $('#resetButton');
+    var buttonReset = $('#buttonReset');
+    var buttonNext = $('#buttonNext');
 
 
     var windowWidth = window.outerWidth;
@@ -103,10 +103,7 @@ function stylen() {
         "height": heightStart + div9.html() * 10,
         "backgroundColor": "darkgreen"
     });
-    buttonTesten.css({
-        "top": topStart + heightStart + 200,
-        "left": leftStart + (widthNormal * 9) / 2 - 50
-    });
+
 
     klammer.css({
         "top": topStart + 55,
@@ -118,6 +115,16 @@ function stylen() {
         "top": topStart + 100,
         "left": leftStart,
         "width": widthNormal * 9 - 5
+    });
+
+    buttonReset.css({
+        "top": topStart + heightStart + 200,
+        "left": leftStart + (widthNormal * 9) / 2 + 20
+    });
+
+    buttonNext.css({
+        "top": topStart + heightStart + 200,
+        "left": leftStart + (widthNormal * 9) / 2 - 120
     });
 
 }

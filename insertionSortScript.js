@@ -101,12 +101,14 @@ function stylen() {
     });
     button.css({
         "top": topStart + heightStart + 200,
-        "left": leftStart + (widthNormal * 9) / 2 +20
+        "left": leftStart + (widthNormal * 9) / 2 + 20
     });
+
     button2.css({
         "top": topStart + heightStart + 200,
         "left": leftStart + (widthNormal * 9) / 2 - 120
     });
+
     text.css({
         "top": topStart + 350,
         "left": leftStart,
