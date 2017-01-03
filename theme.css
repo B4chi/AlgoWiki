@@ -1,5 +1,5 @@
 body{
-    background-color: white;
+    background-color: black;
 }
 h1{
     text-align: center;
@@ -23,12 +23,19 @@ body nav ul li {
     display: block;
     border: 1px black solid;
     font-size: larger;
+    color: white;
 }
 
 
-#content{
+#content {
     margin: 0 auto;
     text-align: center;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    right: 200px;
+    bottom: 0;
+    background-color: white;
 }
 .divs{
     text-align: center;

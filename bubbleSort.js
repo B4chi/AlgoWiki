@@ -17,7 +17,7 @@ $(document).ready(function () {
     });
 
     $('#buttonReset').click(function () {
-        stylen();
+        reset();
     });
 
 });
