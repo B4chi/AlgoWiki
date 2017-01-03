@@ -42,7 +42,7 @@ function stylen() {
     var buttonReset = $('#buttonReset');
     var buttonNext = $('#buttonNext');
 
-    var windowWidth = window.outerWidth;
+    var windowWidth = window.innerWidth;
     leftStart = windowWidth / 2 - (widthNormal * 9 / 2);
 
     div1.css({

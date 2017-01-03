@@ -17,8 +17,7 @@ $(document).ready(function () {
     });
 
     $('#buttonReset').click(function () {
-        schritt = 1;
-        stylen();
+        reset();
     });
 
 });
@@ -37,11 +36,11 @@ function stylen() {
     var div9 = $('#div9');
     var text = $('.textField');
     var klammer = $('#klammer');
-    var buttonNext = $('#buttonNext');
     var buttonReset = $('#buttonReset');
+    var buttonNext = $('#buttonNext');
 
 
-    var windowWidth = window.outerWidth;
+    var windowWidth = window.innerWidth;
     leftStart = windowWidth / 2 - (widthNormal * 9 / 2);
 
     div1.css({
@@ -120,12 +119,12 @@ function stylen() {
 
     buttonReset.css({
         "top": topStart + heightStart + 200,
-        "left": leftStart + (widthNormal * 9) / 2 + 20
+        "left": leftStart + (widthNormal * 9) / 2 - 120
     });
 
     buttonNext.css({
         "top": topStart + heightStart + 200,
-        "left": leftStart + (widthNormal * 9) / 2 - 120
+        "left": leftStart + (widthNormal * 9) / 2 + 20
     });
 
 }
