@@ -18,6 +18,7 @@ $(document).ready(function () {
 
     $('#buttonReset').click(function () {
         reset();
+
     });
 
 });
