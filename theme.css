@@ -53,7 +53,20 @@ body nav ul li {
     border-radius: 3px;
     box-shadow: 0  5px 5px darkslategrey;
 }
+#buttonReset {
+    position: fixed;
+    width: 100px;
+    height: 40px;
+    border: 1px black solid;
+    background-color: limegreen;
+    font-size: large;
+    border-radius: 3px;
+    box-shadow: 0  5px 5px darkslategrey;
+}
 #buttonNext:active {
+    transform: translateY(3px);
+}
+#buttonReset:active {
     transform: translateY(3px);
 }
 

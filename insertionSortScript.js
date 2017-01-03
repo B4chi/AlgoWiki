@@ -15,6 +15,10 @@ $(document).ready(function () {
     $('#buttonNext').click(function () {
         buttonItertator();
     });
+
+    $('#buttonReset').click(function () {
+        reset();
+    });
 });
 
 function stylen() {
@@ -29,6 +33,7 @@ function stylen() {
     var div8 = $('#div8');
     var div9 = $('#div9');
     var button = $('#buttonNext');
+    var button2 = $('#buttonReset');
     var text = $('.textField');
 
     var windowWidth = window.innerWidth;
@@ -96,7 +101,11 @@ function stylen() {
     });
     button.css({
         "top": topStart + heightStart + 200,
-        "left": leftStart + (widthNormal * 9) / 2 - 50
+        "left": leftStart + (widthNormal * 9) / 2 +20
+    });
+    button2.css({
+        "top": topStart + heightStart + 200,
+        "left": leftStart + (widthNormal * 9) / 2 - 120
     });
     text.css({
         "top": topStart + 350,
@@ -340,6 +349,7 @@ function setText(text) {
 }
 
 function reset() {
-    schritt =1;
     stylen();
+    setText("");
+    schritt = 1;
 }
