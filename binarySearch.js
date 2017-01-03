@@ -17,6 +17,7 @@ $(document).ready(function () {
     });
 
     $('#buttonReset').click(function () {
+        schritt = 1;
         stylen();
     });
 
@@ -129,14 +130,14 @@ function stylen() {
     });
     textField.text("Binary Search sucht ein Element in einer vorsortierten Liste. Der Algorithmus arbeitet rekursiv. In unserem Beispiel wollen wir nach der Zahl 6 suchen.");
 
-    buttonReset.css({
-        "top": topStart + heightStart + 200,
-        "left": leftStart + (widthNormal * 9) / 2 -120
-    });
-
     buttonNext.css({
         "top": topStart + heightStart + 200,
         "left": leftStart + (widthNormal * 9) / 2 + 20
+    });
+
+    buttonReset.css({
+        "top": topStart + heightStart + 200,
+        "left": leftStart + (widthNormal * 9) / 2 - 120
     });
 }
 
@@ -163,8 +164,12 @@ function buttonItertator() {
             schritt++;
             break;
         case 2:
-            textField.text("Nun wird die entsprechende Zahl, in diesem Falle die 5, mit unserer gesuchten Zahl 6 verglichen. " +
-                "Da die Zahl 5 kleiner ist, als unsere gesuchte Zahl, können wir sicher sein, dass die Menge aller Elemente links von dem Zeiger, inklusive der 5 unser gesuchtes Element NICHT enthalten kann.");
+            textField.text("Nun wird die entsprechende Zahl, in diesem Falle die 5, mit unserer gesuchten Zahl 6 verglichen. ");
+            schritt++;
+            break;
+
+        case 3:
+            textField.text("Da die Zahl 5 kleiner ist, als unsere gesuchte Zahl, können wir sicher sein, dass die Menge aller Elemente links von dem Zeiger, inklusive der 5 unser gesuchtes Element NICHT enthalten kann.");
             moveSeperator(seperator, 5);
             showSeperator(seperator, "visible");
             schritt++;
@@ -202,17 +207,25 @@ function buttonItertator() {
             schritt++;
             break;
         case 7:
-            textField.text("Alle übrigen Elemente werden nun wieder als neue Teilliste genommen. In unserem Beispiel bemerken wir, dass die Liste aber nur noch ein Element enthält. " +
-                "Dieses wird wieder mit der gesuchten Zahl 6 verglichen. Wir sehen, dass 6 = 6 und haben somit eine Lösung gefunden.");
+            textField.text("Alle übrigen Elemente werden nun wieder als neue Teilliste genommen. In unserem Beispiel bemerken wir, dass die Liste aber nur noch ein Element enthält. ");
             moveArrow(arrow, 6);
             showArrow(arrow, "visible");
             schritt++;
             break;
         case 8:
+            textField.text("Dieses Element wird wieder mit der gesuchten Zahl 6 verglichen. Wir sehen, dass 6 = 6 und haben somit eine Lösung gefunden.");
+            schritt++;
+            break;
+        case 9:
+            showArrow(arrow, "hidden")
             textField.text("Der Algorithmus arbeitet rekursiv durch Abarbeitung immer kleiner werdender Teillisten. " +
-                "Dies geht jedes mal so lange, bis der Elementarfall eintritt, dass nur noch ein einziges Element in der Teilliste vorhanden ist. " +
-                "Durch die Rekursion arbeitet der Algorithmus außerordentlich effizient.");
-
+                "Dies geht jedes mal so lange, bis der Elementarfall eintritt, dass nur noch ein einziges Element in der Teilliste vorhanden ist. ");
+            schritt++;
+            break;
+        case 10:
+            textField.text("Durch die Rekursion arbeitet der Algorithmus außerordentlich effizient.");
+            schritt++;
+            break;
     }
 }
 
