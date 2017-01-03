@@ -17,8 +17,7 @@ $(document).ready(function () {
     });
 
     $('#buttonReset').click(function () {
-        schritt = 1;
-        stylen();
+        reset();
     });
 
 });
