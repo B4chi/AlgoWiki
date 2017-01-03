@@ -174,7 +174,7 @@ function buttonItertator() {
             showSeperator(seperator, "visible");
             schritt++;
             break;
-        case 3:
+        case 4:
             textField.text("Diese Elemente brauchen wir im folgenden nicht mehr betrachten.");
             showArrow(arrow, "hidden");
             showSeperator(seperator, "hidden");
@@ -185,19 +185,19 @@ function buttonItertator() {
             setGray(div5);
             schritt++;
             break;
-        case 4:
+        case 5:
             textField.text("Die übrigen Elemente werden nun als neue Teilliste genommen. Der Zeiger steht wieder auf dem mittleren Element, dieses mal die 7.");
             moveArrow(arrow, 7);
             showArrow(arrow, "visible");
             schritt++;
             break;
-        case 5:
-            textField.text("Nun vergleichen wir die 7 mit der gesuchten Zahl 6. Da sie größer ist als die 6 können wir wieder sicher sein, dass alle Elemente rechts von der 7, inklusive der 7 selbst, unsere Lösung nicht enthalten können.");
+        case 6:
+            textField.text("Nun vergleichen wir die 7 mit der gesuchten Zahl 6. Da sie größer ist als die 6 können wir sicher sein, dass alle Elemente rechts von der 7, inklusive der 7 selbst, unsere Lösung nicht enthalten können.");
             moveSeperator(seperator, 6);
             showSeperator(seperator, "visible");
             schritt++;
             break;
-        case 6:
+        case 7:
             textField.text("Auch diese Elemente brauchen wir im folgenden nicht mehr betrachten.");
             showArrow(arrow, "hidden");
             showSeperator(seperator, "hidden");
@@ -206,23 +206,23 @@ function buttonItertator() {
             setGray(div9);
             schritt++;
             break;
-        case 7:
+        case 8:
             textField.text("Alle übrigen Elemente werden nun wieder als neue Teilliste genommen. In unserem Beispiel bemerken wir, dass die Liste aber nur noch ein Element enthält. ");
             moveArrow(arrow, 6);
             showArrow(arrow, "visible");
             schritt++;
             break;
-        case 8:
+        case 9:
             textField.text("Dieses Element wird wieder mit der gesuchten Zahl 6 verglichen. Wir sehen, dass 6 = 6 und haben somit eine Lösung gefunden.");
             schritt++;
             break;
-        case 9:
+        case 10:
             showArrow(arrow, "hidden")
             textField.text("Der Algorithmus arbeitet rekursiv durch Abarbeitung immer kleiner werdender Teillisten. " +
                 "Dies geht jedes mal so lange, bis der Elementarfall eintritt, dass nur noch ein einziges Element in der Teilliste vorhanden ist. ");
             schritt++;
             break;
-        case 10:
+        case 11:
             textField.text("Durch die Rekursion arbeitet der Algorithmus außerordentlich effizient.");
             schritt++;
             break;
