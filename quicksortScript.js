@@ -23,31 +23,37 @@ function stylen() {
     var zeig1 = $('#zeig1');
     var zeig2 = $('#zeig2');
     var pivot = $('#pivot');
-    var buttonDiv = $('#button');
 
-    var windowWidth = window.outerWidth;
+    var buttonStep = $('#buttonNext');
+    var text = $('.textField');
+    var buttonReset = $('#buttonReset');
+
+    var windowWidth = window.innerWidth;
     leftStart = windowWidth/2 - (widthNormal*9 /2);
 
 
     zeig1.css({
-        "top": topStart - zeig1.html() * 5,
+        "top": topStart +100,
         "left": leftStart,
         "height": heightStart + zeig1.html() * 5,
-        "backgroundColor": "blue"
+        "backgroundColor": "blue",
+        "display": "none"
     });
 
     zeig2.css({
-        "top": topStart - zeig2.html() * 5,
+        "top": topStart +100,
         "left": leftStart + widthNormal*7,
         "height": heightStart + zeig2.html() * 5,
-        "backgroundColor": "red"
+        "backgroundColor": "red",
+        "display": "none"
     });
 
     pivot.css({
-        "top": topStart - zeig1.html() * 5,
+        "top": topStart +100,
         "left": leftStart + widthNormal*8,
         "height": heightStart + zeig1.html() * 5,
-        "backgroundColor": "limegreen"
+        "backgroundColor": "limegreen",
+        "display": "none"
     });
 
     div1.css({
@@ -111,9 +117,20 @@ function stylen() {
         "backgroundColor": "darkred"
     });
 
-    buttonDiv.css({
+    buttonStep.css({
         "top": topStart + heightStart + 200,
-        "left": leftStart + (widthNormal*9)/2 -50
+        "left": leftStart + (widthNormal * 9) / 2 + 20
+    });
+
+    buttonReset.css({
+        "top": topStart + heightStart + 200,
+        "left": leftStart + (widthNormal * 9) / 2 - 120
+    });
+
+    text.css({
+        "top": topStart + 350,
+        "left": leftStart,
+        "width": widthNormal*9
     });
 
 }
@@ -121,9 +138,12 @@ function stylen() {
 $(document).ready(function () {
     stylen();
 
-    $('#button').click(function () {
+    $('#buttonNext').click(function () {
         buttonItertator();
     });
+    $('#buttonReset').click(function () {
+        reset();
+    })
 });
 
 $(window).resize(function () {
@@ -147,21 +167,20 @@ function buttonItertator() {
 
     switch (schritt) {
         case 1:
+            /*
             ausblenden(zeig1);
             ausblenden(zeig2);
             ausblenden(pivot);
-            // Zeiger + Pivot ausblenden bzw. schon vorher ausblenden
+            */
             schritt++;
             break;
         case 2:
             einblenden(pivot,8);
-            // Pivot Element einblenden
             schritt++;
             break;
         case 3:
             einblenden(zeig1,0);
             einblenden(zeig2,7);
-            // Zeiger einblenden
             schritt++;
             break;
         case 4:
@@ -228,7 +247,6 @@ function buttonItertator() {
             ausblenden(zeig1);
             ausblenden(zeig2);
             ausblenden(pivot);
-             //Zeiger + pivot ausblenden
             schritt++;
             break;
         case 19:
@@ -284,7 +302,6 @@ function buttonItertator() {
             ausblenden(zeig1);
             ausblenden(zeig2);
             ausblenden(pivot);
-            // Zeiger + Pivot ausblenden
             schritt++;
             break;
         case 30:
@@ -326,7 +343,6 @@ function buttonItertator() {
             ausblenden(zeig1);
             ausblenden(zeig2);
             ausblenden(pivot);
-            // Zeiger + pivot ausblenden
             setGray(div2);
             schritt++;
             break;
@@ -356,7 +372,6 @@ function buttonItertator() {
             ausblenden(zeig1);
             ausblenden(zeig2);
             ausblenden(pivot);
-            //Zeiger + Pivot ausblenden
             setGray(div1);
             schritt++;
             break;
@@ -399,7 +414,6 @@ function buttonItertator() {
             ausblenden(zeig1);
             ausblenden(zeig2);
             ausblenden(pivot);
-            //Zeiger + Pivot ausblenden
             setGray(div6);
             schritt++;
             break;
@@ -429,7 +443,6 @@ function buttonItertator() {
             ausblenden(zeig1);
             ausblenden(zeig2);
             ausblenden(pivot);
-            //Zeiger + Pivot ausblenden
             setGray(div8);
             schritt++;
             break;
@@ -440,6 +453,11 @@ function buttonItertator() {
 
     }
 }
+
+    function reset() {
+        schritt = 1;
+        stylen();
+    }
 
     function animateLeft(div, pos) {
         div.animate({"left": leftStart +  widthNormal * pos});
