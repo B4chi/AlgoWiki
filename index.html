@@ -12,21 +12,38 @@
 
 
             $('#insertionSort').click(function () {
-                $('#content').load("insertionSort.html");
+                $('#content').animate({"opacity": 0}, "slow", function () {
+                    $('#content').load("insertionSort.html",function () {
+                        $('#content').animate({"opacity": 1}, "slow");
+                    });
+                });
+
             });
 
             $('#bubbleSort').click(function () {
-                $('#content').load("bubbleSort.html");
+                $('#content').animate({"opacity": 0}, "slow", function () {
+                    $('#content').load("bubbleSort.html",function () {
+                        $('#content').animate({"opacity": 1}, "slow");
+                    });
+                });
             });
             $('#quickSort').click(function () {
-                $('#content').load("quicksort.html");
-
+                $('#content').animate({"opacity": 0}, "slow", function () {
+                    $('#content').load("quicksort.html",function () {
+                        $('#content').animate({"opacity": 1}, "slow");
+                    });
+                });
             });
             $('#mergeSort').click(function () {
 
             });
             $('#binarySearch').click(function () {
-                $('#content').load("binarySearch.html");
+                $('#content').animate({"opacity": 0}, "slow", function () {
+                    $('#content').load("binarySearch.html",function () {
+                        $('#content').animate({"opacity": 1}, "slow");
+                    });
+                });
+
             })
         });
 
@@ -36,7 +53,6 @@
 
 </head>
 <body>
-<h1>AlgoWiki</h1>
 <nav>
     <ul>
         <li id="insertionSort">Insertionsort</li>
@@ -46,10 +62,13 @@
         <li id="binarySearch">Binary Search</li>
     </ul>
 </nav>
+<main>
+    <h1>AlgoWiki</h1>
+    <div id="content">
 
-<div id="content">
+    </div>
+</main>
 
-</div>
 
 
 

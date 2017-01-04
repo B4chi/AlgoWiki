@@ -1,5 +1,6 @@
 /**
  * Created by bachi on 14.12.2016.
+ *
  */
 
 var schritt = 1;
@@ -111,7 +112,7 @@ function stylen() {
 
     text.css({
         "top": topStart + 350,
-        "left": leftStart,
+        "left": leftStart -15,
         "width": widthNormal*9
     });
 
@@ -321,9 +322,11 @@ function buttonItertator() {
             break;
         case 41:
             animateInLine(div9);
+            schritt++;
             break;
         case 42:
             setText('Wenn alle Elemente als sortiert makiert sind ist die Sortierung der Gesamtliste abgeschlossen.');
+            disableButton($('#buttonNext'));
             break;
 
     }
@@ -354,4 +357,9 @@ function reset() {
     stylen();
     setText("");
     schritt = 1;
+}
+function disableButton(button) {
+    button.css({
+        "backgroundColor": "#757575"
+    });
 }
