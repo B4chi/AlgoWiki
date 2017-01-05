@@ -35,7 +35,11 @@
                 });
             });
             $('#mergeSort').click(function () {
-
+                $('#content').animate({"opacity": 0}, "slow", function () {
+                    $('#content').load("mergeSort.html",function () {
+                        $('#content').animate({"opacity": 1}, "slow");
+                    });
+                });
             });
             $('#binarySearch').click(function () {
                 $('#content').animate({"opacity": 0}, "slow", function () {
