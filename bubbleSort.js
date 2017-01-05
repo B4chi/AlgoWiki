@@ -1,3 +1,7 @@
+/**
+ * Created by Jo on 26.12.2016.
+ */
+
 var schritt = 1;
 
 var topStart = 200;
