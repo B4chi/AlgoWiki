@@ -130,3 +130,10 @@ main {
     height: 105px;
     display: none;
 }
+#rahmenQS {
+    height: 230px;
+    border: 2px solid #757575;
+    position: fixed;
+    border-radius: 3px;
+    display: none;
+}

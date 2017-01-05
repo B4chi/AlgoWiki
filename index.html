@@ -50,7 +50,14 @@
 
             })
         });
+        $('#quicksortWorst').click(function () {
+            $('#content').animate({"opacity": 0}, "slow", function () {
+                $('#content').load("quicksortWorst.html",function () {
+                    $('#content').animate({"opacity": 1}, "slow");
+                });
+            });
 
+        });
 
 
     </script>
@@ -61,9 +68,10 @@
     <ul>
         <li id="insertionSort">Insertionsort</li>
         <li id="bubbleSort">Bubblesort</li>
-        <li id="quickSort">Quicksort</li>
+        <li id="quickSort">Quicksort average</li>
         <li id="mergeSort">Mergesort</li>
         <li id="binarySearch">Binary Search</li>
+        <li id="quicksortWorst">Quicksort worst</li>
     </ul>
 </nav>
 <main>

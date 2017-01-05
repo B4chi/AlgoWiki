@@ -21,10 +21,6 @@ $(document).ready(function () {
     })
 });
 
-$(window).resize(function () {
-    stylen();
-});
-
 function stylen() {
 
     var div1 = $('#div1');
@@ -39,7 +35,7 @@ function stylen() {
     var zeig1 = $('#zeig1');
     var zeig2 = $('#zeig2');
     var pivot = $('#pivot');
-    var klammer = $('#klammer');
+    var rahmen = $('#rahmenQS');
 
     var buttonStep = $('#buttonNext');
     var text = $('.textField');
@@ -49,8 +45,13 @@ function stylen() {
     leftStart = windowWidth / 2 - (widthNormal * 9 / 2);
 
 
+    rahmen.css({
+        "top": 100,
+        "left": leftStart
+    });
+
     zeig1.css({
-        "top": topStart + 100,
+        "top": topStart + 80,
         "left": leftStart,
         "height": heightStart + zeig1.html() * 5,
         "backgroundColor": "blue",
@@ -58,7 +59,7 @@ function stylen() {
     });
 
     zeig2.css({
-        "top": topStart + 100,
+        "top": topStart + 80,
         "left": leftStart + widthNormal * 7,
         "height": heightStart + zeig2.html() * 5,
         "backgroundColor": "red",
@@ -66,17 +67,11 @@ function stylen() {
     });
 
     pivot.css({
-        "top": topStart + 100,
+        "top": topStart + 80,
         "left": leftStart + widthNormal * 8,
         "height": heightStart + pivot.html() * 5,
         "backgroundColor": "limegreen",
         "display": "none"
-    });
-
-    klammer.css({
-        "top": topStart + 55,
-        "left": leftStart + 15,
-        "visibility": "hidden"
     });
 
     div1.css({
@@ -171,7 +166,6 @@ function buttonItertator() {
     var zeig1 = $('#zeig1');
     var zeig2 = $('#zeig2');
     var pivot = $('#pivot');
-    var klammer = $('#klammer');
 
     switch (schritt) {
         case 1:
@@ -184,6 +178,7 @@ function buttonItertator() {
             break;
         case 3:
             // Klammer über die gesamte Zahlenfolge
+            showKlammer(0,9);
             setText('Als erstes wird die gesamte Zahlenfolge angeschaut.');
             schritt++;
             break;
@@ -326,11 +321,13 @@ function buttonItertator() {
             break;
         case 34:
             //Klammer von 3 bis 2
+            showKlammer(0,5);
             setText('Es ist uns gelungen, Zahlen die kleiner als das Pivotelement sind auf die linke Seite zu setzen.');
             schritt++;
             break;
         case 35:
             //Klammer von 8 bis 9
+            showKlammer(6,3);
             setText('Und Zahlen die größer als das Pivotelement sind auf die rechte Seite zu setzen.');
             schritt++;
             break;
@@ -341,6 +338,7 @@ function buttonItertator() {
             break;
         case 37:
             //Klammer von 3 - 2
+            showKlammer(0,5);
             setText('Als nächstes werden Operationen auf der Sequenz links von der Division durchgeführt.');
             schritt++;
             break;
@@ -411,11 +409,13 @@ function buttonItertator() {
             break;
         case 51:
             //Klammer auf 1
+            showKlammer(0,1);
             setText('und wir konnten die Sequenz weiter unterteilen, in Zahlen die kleiner sind als das Pivotelement auf der linken Seite.');
             schritt++;
             break;
         case 52:
             //Klammer 4 - 5
+            showKlammer(2,3);
             setText('Und Zahlen größer als das Pivotelement auf der rechten Seite.');
             schritt++;
             break;
@@ -426,6 +426,7 @@ function buttonItertator() {
             break;
         case 54:
             //Klammmer auf 1
+            showKlammer(0,1);
             setText('Die linke Seite der Division wird nun der Operation unterzogen.');
             schritt++;
             break;
@@ -436,6 +437,7 @@ function buttonItertator() {
             break;
         case 56:
             //Klammer von 4 - 5
+            showKlammer(2,3);
             setText('Nun werden die Operationen auf der rechten Seite durchgeführt, die durch die Zweite Runde der Operationen erzeugt wurde.');
             schritt++;
             break;
@@ -494,6 +496,7 @@ function buttonItertator() {
             break;
         case 65:
             //klammer auf 4 & 3
+            showKlammer(2,2);
             schritt++;
             break;
         case 66:
@@ -531,6 +534,7 @@ function buttonItertator() {
             break;
         case 72:
             //klammer auf 4
+            showKlammer(3,1);
             schritt++;
             break;
         case 73:
@@ -543,6 +547,7 @@ function buttonItertator() {
             break;
         case 75:
             //Klammer 8 - 9
+            showKlammer(6,3);
             schritt++;
             break;
         case 76:
@@ -589,6 +594,7 @@ function buttonItertator() {
             break;
         case 83:
             //Klammer auf 8 & 7
+            showKlammer(6,2);
             schritt++;
             break;
         case 84:
@@ -626,6 +632,7 @@ function buttonItertator() {
             break;
         case 90:
             //Klammer auf 8
+            showKlammer(7,1);
             schritt++;
             break;
         case 91:
@@ -662,23 +669,21 @@ function swap(divA, posA, divB, posB) {
 }
 function setZeig1Normal(zeig) {
     zeig.css({
-        "top": topStart + 100,
         "height": heightStart + zeig.html() * 5,
-        "width": widthNormal * 0.8,
+        "width": 40,
         "backgroundColor": "blue"
     });
 }
 function setZeig2Normal(zeig) {
     zeig.css({
-        "top": topStart + 100,
         "height": heightStart + zeig.html() * 5,
-        "width": widthNormal * 0.8,
+        "width": 40,
         "backgroundColor": "red"
     });
 }
 function setDivHalf(div) {
     div.css({
-        "width": widthNormal * 0.45
+        "width": 20
     });
 }
 function ausblenden(div) {
@@ -693,16 +698,17 @@ function einblenden(div, pos) {
         "width": widthNormal * 0.8
     })
 }
-function showKlammer(pos) {
-    var klammer = $('#klammer');
-    klammer.css({
-        "visibility": "visible",
-        "left": leftStart + widthNormal * (pos - 1) + 15,
+function showKlammer(pos,wid) {
+    var rahmen = $('#rahmenQS');
+    rahmen.css({
+        "display": "initial",
+        "left": leftStart - 5 + widthNormal * pos,
+        "width": widthNormal * wid
     })
 }
 function klammerAusblenden() {
-    var klammer = $('#klammer');
-    klammer.css({"visibility": "hidden"})
+    var rahmen = $('#rahmenQS');
+    rahmen.css({"display": "none"})
 }
 
 function setText(text) {
