@@ -47,7 +47,8 @@ function stylen() {
 
     rahmen.css({
         "top": 100,
-        "left": leftStart
+        "left": leftStart,
+        "display": "none"
     });
 
     zeig1.css({
