@@ -35,7 +35,7 @@ function stylen() {
     var div7 = $('#div7');
     var div8 = $('#div8');
     var div9 = $('#div9');
-    var textField = $('.textField');
+    var text = $('.textField');
     var klammer = $('#klammer');
     var buttonReset = $('#buttonReset');
     var buttonNext = $('#buttonNext');
@@ -112,14 +112,11 @@ function stylen() {
         "visibility": "hidden"
     });
 
-    textField.css({
+    text.css({
         "top": topStart + 100,
         "left": leftStart,
         "width": widthNormal * 9 - 5
     });
-
-    textField.text("Bubblesort ist ein Algorithmus, der eine unsortierte Liste durch wiederholtes vertauschen zweier benachbarter Elemente in eine sortierte Liste umwandelt. " +
-        "In unserem Beispiel wollen wir die Liste aufsteigend, also vom kleinsten bis hin zum größten Element sortieren.");
 
     buttonReset.css({
         "top": topStart + heightStart + 200,
@@ -145,61 +142,43 @@ function buttonItertator() {
     var div9 = $('#div8');
     var div1 = $('#div9');
     var klammer = $('#klammer');
-    var textField = $('.textField');
 
     switch (schritt) {
         case 1:
-            textField.text("Dazu verwenden wir einen Zeiger, der stets auf zwei benachbarte Elemente zeigt. Dieser steht zu Beginn auf den ersten Beiden Elementen der unsortierten Liste.");
-            schritt = schritt + 0.1;
-            break;
-        case 1.1:
-            textField.text("Nun werden die beiden Werte verglichen. In diesem Falle 5 und 3. Wenn der erste Wert größer ist als der zweite, dann werden die Elemente vertauscht. Wenn der erste Wert kleiner ist als der zweite oder beide den gleichen Wert haben, dann werden die Positionen beibehalten.");
-
             klammer.css({
                 "visibility": "visible"
             });
-            schritt = schritt + 0.9;
+            schritt++;
             break;
         case 2:
-            textField.text("Als nächstes rutscht der Zeiger um exakt eine Position weiter und es werden wieder die beiden Elemente auf die der Zeiger zeigt miteinander verglichen.");
             swap(div5, 1, div3, 0);
             schritt++;
             break;
         case 3:
-            textField.text("5 ist größer als 4, also werden die Elemente wieder getauscht..");
             moveKlammer(klammer, 2);
             schritt++;
             break;
         case 4:
-            textField.text("..und der Zeiger rutscht wieder um eine Position weiter.");
             swap(div5, 2, div4, 1);
             schritt++;
             break;
         case 5:
-            textField.text("Jetzt steht der Zeiger auf 5 und 7. Dieses mal darf nicht getauscht werden, da 5 < 7 und der Zeiger verschiebt sich wieder um eine Position nach rechts.");
             moveKlammer(klammer, 3);
             schritt++;
             break;
         case 6:
-            textField.text("Dieses Verfahren wird kontinuierlich fortgeführt, bis der Zeiger die komplette Liste abgearbeitet hat.");
             moveKlammer(klammer, 4);
-            schritt = schritt + 0.1;
-            break;
-        case 6.1:
-            textField.text("7 > 2, also tauschen");
-            schritt = schritt + 0.9;
+            schritt++;
             break;
         case 7:
             swap(div7, 4, div2, 3);
             schritt++;
             break;
         case 8:
-            textField.text("7 < 8, also unverändert");
             moveKlammer(klammer, 5);
             schritt++;
             break;
         case 9:
-            textField.text("8 > 6, also tauschen");
             moveKlammer(klammer, 6);
             schritt++;
             break;
@@ -208,29 +187,19 @@ function buttonItertator() {
             schritt++;
             break;
         case 11:
-            textField.text("8 < 9, also unverändert");
             moveKlammer(klammer, 7);
             schritt++;
             break;
         case 12:
-            textField.text("9 > 1, also tauschen");
             moveKlammer(klammer, 8);
             schritt++;
             break;
         case 13:
-            textField.text("Jetzt wo die gesamte Liste fertig abgearbeitet wurde, sehen wir, dass sich der erste Wert bereits an seiner korrekten Position befindet. In diesem Falle die 9. ");
             swap(div9, 8, div1, 7);
-            schritt = schritt + 0.1;
+            schritt++;
             break;
 
-        case 13.1:
-            textField.text("Daher müssen wir uns im folgenden nur noch um die Sortierung der unsortierten Restliste kümmern und können unseren Wert 9 außer acht lassen. ");
-            schritt = schritt + 0.1;
-            break;
-        case 13.2:
-            textField.text("Nun springen wir also mit unserem Zeiger wieder an den Anfang von der besagten Restliste und arbeiten diese mit den bekannten Regeln ab.");
-            schritt = schritt + 0.8;
-            break;
+
         case 14:
             setGray(div9);
             moveKlammer(klammer, 1);
@@ -275,14 +244,9 @@ function buttonItertator() {
 
 
         case 24:
-            textField.text("An dieser Stelle wird sehr schön deutlich woher der Algorithmus seinen Namen hat, da in jedem Durchlauf das größte Element der aktuellen Restliste wie eine Blase nach oben 'gebubbelt' wird.");
             setGray(div8);
-            schritt = schritt + 0.1;
-            break;
-        case 24.1:
-            textField.text("Diese Vorgänge wiederholen sich so lange, bis die Gesamtliste schließlich komplett sortiert ist.");
             moveKlammer(klammer, 1);
-            schritt = schritt + 0.9;
+            schritt++;
             break;
         case 25:
             moveKlammer(klammer, 2);
@@ -412,19 +376,8 @@ function buttonItertator() {
             schritt++;
             break;
         case 53:
-            textField.text("Die Gesamtliste ist nun vollständig sortiert.");
             setGray(div2);
             setGray(div1);
-
-            klammer.css({
-                "visibility": "hidden"
-            });
-
-            schritt++;
-            break;
-        case 54:
-            textField.text("Leider ist der Algorithmus sehr ineffizient, da für jedes sortierte Element die komplette Restliste durchgegangen werden muss. " +
-                "Bei kleinen Listen mag das kein Problem sein aber wenn die, zu sortierenden Listen sehr groß werden, kann auch der Aufwand enorm hoch werden.");
     }
 }
 
