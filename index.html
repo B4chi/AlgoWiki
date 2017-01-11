@@ -9,49 +9,59 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+            $("nav ul li").hover(function () {
+                $(this).children("ul").stop().slideDown(200);
+            }, function () {
+                $(this).children("ul").stop().slideUp(200);
+            });
 
 
             $('#insertionSort').click(function () {
                 $('#content').animate({"opacity": 0}, "slow", function () {
-                    $('#content').load("insertionSort.html",function () {
+                    $('#content').load("insertionSort.html", function () {
                         $('#content').animate({"opacity": 1}, "slow");
                     });
                 });
 
             });
-
             $('#bubbleSort').click(function () {
                 $('#content').animate({"opacity": 0}, "slow", function () {
-                    $('#content').load("bubbleSort.html",function () {
+                    $('#content').load("bubbleSort.html", function () {
                         $('#content').animate({"opacity": 1}, "slow");
                     });
                 });
             });
-            $('#quickSort').click(function () {
+            $('#quicksortAverage').click(function () {
                 $('#content').animate({"opacity": 0}, "slow", function () {
-                    $('#content').load("quicksort.html",function () {
+                    $('#content').load("quicksort.html", function () {
+                        $('#content').animate({"opacity": 1}, "slow");
+                    });
+                });
+            });
+            $('#quicksortWorst').click(function () {
+                $('#content').animate({"opacity": 0}, "slow", function () {
+                    $('#content').load("quicksortWorst.html", function () {
                         $('#content').animate({"opacity": 1}, "slow");
                     });
                 });
             });
             $('#mergeSort').click(function () {
                 $('#content').animate({"opacity": 0}, "slow", function () {
-                    $('#content').load("mergeSort.html",function () {
+                    $('#content').load("mergeSort.html", function () {
+                        $('#content').animate({"opacity": 1}, "slow");
+                    });
+                });
+            });
+            $('#linearSearch').click(function () {
+                $('#content').animate({"opacity": 0}, "slow", function () {
+                    $('#content').load("################", function () {
                         $('#content').animate({"opacity": 1}, "slow");
                     });
                 });
             });
             $('#binarySearch').click(function () {
                 $('#content').animate({"opacity": 0}, "slow", function () {
-                    $('#content').load("binarySearch.html",function () {
-                        $('#content').animate({"opacity": 1}, "slow");
-                    });
-                });
-
-            });
-            $('#quicksortWorst').click(function () {
-                $('#content').animate({"opacity": 0}, "slow", function () {
-                    $('#content').load("quicksortWorst.html",function () {
+                    $('#content').load("binarySearch.html", function () {
                         $('#content').animate({"opacity": 1}, "slow");
                     });
                 });
@@ -61,16 +71,29 @@
 
     </script>
 
+    <style type="text/css">
+
+    </style>
 </head>
 <body>
 <nav>
     <ul>
         <li id="insertionSort">Insertionsort</li>
         <li id="bubbleSort">Bubblesort</li>
-        <li id="quickSort">Quicksort average</li>
+        <li>Quicksort average
+            <ul>
+                <li id="quicksortAverage">Average Case</li>
+                <li id="quicksortWorst">Worst Case</li>
+            </ul>
+
+        </li>
         <li id="mergeSort">Mergesort</li>
-        <li id="binarySearch">Binary Search</li>
-        <li id="quicksortWorst">Quicksort worst</li>
+        <li>Suchalgorithmen
+            <ul>
+                <li id="linearSearch">Lineare Suche</li>
+                <li id="binarySearch">Binäre Suche</li>
+            </ul>
+        </li>
     </ul>
 </nav>
 <main>
@@ -79,8 +102,6 @@
 
     </div>
 </main>
-
-
 
 
 </body>

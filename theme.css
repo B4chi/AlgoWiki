@@ -8,7 +8,7 @@ h1{
 body nav {
     position: relative;
     top: 50pt;
-    width: 150pt;
+    width: 220pt;
     font-weight: bold;
     font-size: large;
 }
@@ -17,21 +17,34 @@ body nav ul {
     margin: 0;
     padding: 0;
 }
+body nav ul li:hover {
+    text-shadow: red 0 0 5px;
+}
+body nav ul li:hover ul li{
+    text-shadow: none;
+}
+body nav ul li ul li:hover{
+    text-shadow: red 0 0 5px;
+}
 body nav ul li {
     margin: 0;
     padding: 10px;
     cursor: pointer;
     display: block;
-    border: 1px black solid;
     font-size: larger;
     color: white;
 }
+body nav ul li ul{
+    display: none;
+    font-size: medium;
+}
+
 
 main {
     position: absolute;
     top: 0;
-    left: 220px;
-    right: 220px;
+    left: 250px;
+    right: 250px;
     bottom: 0;
     background-color: white;
     box-shadow: 0 0 10px 10px white;

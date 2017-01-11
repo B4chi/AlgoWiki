@@ -1,3 +1,7 @@
+/**
+ * Methoden für die Visualisierung des Mergesort Algorithmus
+ */
+
 var schritt = 1;
 
 var topStart = 200;
