@@ -15,8 +15,6 @@
                 $(this).children("ul").stop().slideUp(200);
             });
 
-
-
             $('#insertionSort').click(function () {
                 $('#content').animate({"opacity": 0}, "slow", function () {
                     $('#content').load("insertionSort/insertionSort.html", function () {
@@ -60,6 +58,7 @@
                     });
                 });
             });
+
             $('#binarySearch').click(function () {
                 $('#content').animate({"opacity": 0}, "slow", function () {
                     $('#content').load("binarySearch/binarySearch.html", function () {
@@ -67,14 +66,24 @@
                     });
                 });
             });
+
+
+            /* Codesegment zum einfügen neuer Algorithmen
+
+            $('#[ID des <li> Elements]').click(function () {
+                $('#content').animate({"opacity": 0}, "slow", function () {
+                    $('#content').load("[Ordnername]/[Dateiname].html", function () {
+                        $('#content').animate({"opacity": 1}, "slow");
+                    });
+                });
+            });
+            */
+
         });
 
 
     </script>
 
-    <style type="text/css">
-
-    </style>
 </head>
 <body>
 <nav>
@@ -86,7 +95,6 @@
                 <li id="quicksortAverage">Average Case</li>
                 <li id="quicksortWorst">Worst Case</li>
             </ul>
-
         </li>
         <li id="mergeSort">Mergesort</li>
         <li>Suchalgorithmen
