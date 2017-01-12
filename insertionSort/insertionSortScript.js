@@ -33,8 +33,8 @@ function stylen() {
     var div7 = $('#div7');
     var div8 = $('#div8');
     var div9 = $('#div9');
-    var button = $('#buttonNext');
-    var button2 = $('#buttonReset');
+    var buttonNext = $('#buttonNext');
+    var buttonReset = $('#buttonReset');
     var text = $('.textField');
 
     var windowWidth = window.innerWidth;
@@ -100,12 +100,13 @@ function stylen() {
         "height": heightStart + div9.html() * 10,
         "backgroundColor": "darkgreen"
     });
-    button.css({
+    buttonNext.css({
         "top": topStart + heightStart + 200,
-        "left": leftStart + (widthNormal * 9) / 2 + 20
+        "left": leftStart + (widthNormal * 9) / 2 + 20,
+        "backgroundColor": "darkgoldenrod"
     });
 
-    button2.css({
+    buttonReset.css({
         "top": topStart + heightStart + 200,
         "left": leftStart + (widthNormal * 9) / 2 - 120
     });
@@ -115,6 +116,8 @@ function stylen() {
         "left": leftStart -15,
         "width": widthNormal*9
     });
+    disableButton(buttonReset);
+    buttonItertator();
 
 }
 
@@ -135,10 +138,12 @@ function buttonItertator() {
 
     switch (schritt) {
         case 1:
+
             setText('"Insertion Sort" ist ein Sortieralgorithmus. Beispielsweise werden Elemente einer Liste sortiert.')
             schritt++;
             break;
         case 2:
+            enableResetButton();
             setGray(div1);
             setText('Zu beginn wird das am weitesten links stehende Element der Liste als sortiert angesehen.')
             schritt++;
@@ -333,12 +338,7 @@ function buttonItertator() {
 }
 
 
-function animateLeft(div, pos) {
-    div.animate({"left": leftStart + widthNormal * pos});
-}
-function setGray(div) {
-    div.css("backgroundColor", "#757575");
-}
+/*============ Spezielle Methoden für den Algorithmus ============*/
 function animateOutLine(div) {
     div.animate({"top": topStart + 75});
 }
@@ -347,19 +347,4 @@ function animateInLine(div) {
         setGray(div)
     });
 }
-function setText(text) {
-    var div = $('.textField');
-    div.empty();
-    div.append(document.createTextNode(text));
-}
 
-function reset() {
-    stylen();
-    setText("");
-    schritt = 1;
-}
-function disableButton(button) {
-    button.css({
-        "backgroundColor": "#757575"
-    });
-}

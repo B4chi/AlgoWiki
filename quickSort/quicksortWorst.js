@@ -37,7 +37,7 @@ function stylen() {
     var pivot = $('#pivot');
     var rahmen = $('#rahmenQS');
 
-    var buttonStep = $('#buttonNext');
+    var buttonNext = $('#buttonNext');
     var text = $('.textField');
     var buttonReset = $('#buttonReset');
 
@@ -136,9 +136,10 @@ function stylen() {
         "backgroundColor": "darkgreen"
     });
 
-    buttonStep.css({
+    buttonNext.css({
         "top": topStart + heightStart + 120,
-        "left": leftStart + (widthNormal * 9) / 2 + 20
+        "left": leftStart + (widthNormal * 9) / 2 + 20,
+        "backgroundColor": "darkgoldenrod"
     });
 
     buttonReset.css({
@@ -151,6 +152,8 @@ function stylen() {
         "left": leftStart,
         "width": widthNormal * 9
     });
+    disableButton(buttonReset);
+    buttonItertator();
 }
 
 function buttonItertator() {
@@ -174,6 +177,7 @@ function buttonItertator() {
             break;
         case 2:
             setText('In diesem Fall wird der worst case von Quicksort dargestellt');
+            enableResetButton();
             schritt++;
             break;
         case 3:
@@ -229,17 +233,17 @@ function buttonItertator() {
             setText('Selbst wenn die linke Markierung in die rechte Markierung fährt, hört sie nicht auf. Sie unterscheidet sich von der rechten Markierung in dieser Hinsicht.');
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig1,8);
-            animateLeft(zeig2,8.5);
+            animateLeft(zeig1,7);
+            animateLeft(zeig2,7.5);
             schritt++;
             break;
         case 15:
             setText('Wenn die linke Markierung eine Zahl erreicht, die größer oder gleich der Pivotnummer ist, hört sie auf sich zu bewegen.');
             setDivHalf(pivot);
-            animateLeft(zeig1,9);
-            animateLeft(pivot,9.5);
+            animateLeft(zeig1,8);
+            animateLeft(pivot,8.5);
             setZeig2Normal();
-            animateLeft(zeig2,8);
+            animateLeft(zeig2,7);
             schritt++;
             break;
         case 16:
@@ -310,17 +314,17 @@ function buttonItertator() {
             break;
         case 30:
             setDivHalf(zeig1);
-            animateLeft(zeig1,7);
+            animateLeft(zeig1,6);
             setDivHalf(zeig2);
-            animateLeft(zeig2,7.5);
+            animateLeft(zeig2,6.5);
             schritt++;
             break;
         case 31:
             setDivHalf(pivot);
-            animateLeft(pivot,8.5);
-            animateLeft(zeig1,8);
+            animateLeft(pivot,7.5);
+            animateLeft(zeig1,7);
             setZeig2Normal();
-            animateLeft(zeig2,7);
+            animateLeft(zeig2,6);
             schritt++;
             break;
         case 32:
@@ -358,34 +362,34 @@ function buttonItertator() {
             schritt++;
             break;
         case 39:
-            animateLeft(zeig1,2);
+            animateLeft(zeig1,1);
             schritt++;
             break;
         case 40:
-            animateLeft(zeig1,3);
+            animateLeft(zeig1,2);
             schritt++;
             break;
         case 41:
-            animateLeft(zeig1,4);
+            animateLeft(zeig1,3);
             schritt++;
             break;
         case 42:
-            animateLeft(zeig1,5);
+            animateLeft(zeig1,4);
             schritt++;
             break;
         case 43:
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig1,6);
-            animateLeft(zeig2,6.5);
+            animateLeft(zeig1,5);
+            animateLeft(zeig2,5.5);
             schritt++;
             break;
         case 44:
             setDivHalf(pivot);
-            animateLeft(zeig1,7);
-            animateLeft(pivot,7.5);
+            animateLeft(zeig1,6);
+            animateLeft(pivot,6.5);
             setZeig2Normal();
-            animateLeft(zeig2,6);
+            animateLeft(zeig2,5);
             schritt++;
             break;
         case 45:
@@ -423,30 +427,30 @@ function buttonItertator() {
             schritt++;
             break;
         case 52:
-            animateLeft(zeig1,2);
+            animateLeft(zeig1,1);
             schritt++;
             break;
         case 53:
-            animateLeft(zeig1,3);
+            animateLeft(zeig1,2);
             schritt++;
             break;
         case 54:
-            animateLeft(zeig1,4);
+            animateLeft(zeig1,3);
             schritt++;
             break;
         case 55:
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig1,5);
-            animateLeft(zeig2,5.5);
+            animateLeft(zeig1,4);
+            animateLeft(zeig2,4.5);
             schritt++;
             break;
         case 56:
             setDivHalf(pivot);
-            animateLeft(zeig1,6);
-            animateLeft(pivot,6.5);
+            animateLeft(zeig1,5);
+            animateLeft(pivot,5.5);
             setZeig2Normal();
-            animateLeft(zeig2,5);
+            animateLeft(zeig2,4);
             schritt++;
             break;
         case 57:
@@ -484,26 +488,26 @@ function buttonItertator() {
             schritt++;
             break;
         case 64:
-            animateLeft(zeig1,2);
+            animateLeft(zeig1,1);
             schritt++;
             break;
         case 65:
-            animateLeft(zeig1,3);
+            animateLeft(zeig1,2);
             schritt++;
             break;
         case 66:
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig1,4);
-            animateLeft(zeig2,4.5);
+            animateLeft(zeig1,3);
+            animateLeft(zeig2,3.5);
             schritt++;
             break;
         case 67:
             setDivHalf(pivot);
-            animateLeft(zeig1,5);
-            animateLeft(pivot,5.5);
+            animateLeft(zeig1,4);
+            animateLeft(pivot,4.5);
             setZeig2Normal();
-            animateLeft(zeig2,4);
+            animateLeft(zeig2,3);
             schritt++;
             break;
         case 68:
@@ -541,22 +545,22 @@ function buttonItertator() {
             schritt++;
             break;
         case 75:
-            animateLeft(zeig1,2);
+            animateLeft(zeig1,1);
             schritt++;
             break;
         case 76:
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig1,3);
-            animateLeft(zeig2,3.5);
+            animateLeft(zeig1,2);
+            animateLeft(zeig2,2.5);
             schritt++;
             break;
         case 77:
             setDivHalf(pivot);
-            animateLeft(zeig1,4);
-            animateLeft(pivot,4.5);
+            animateLeft(zeig1,3);
+            animateLeft(pivot,3.5);
             setZeig2Normal();
-            animateLeft(zeig2,3);
+            animateLeft(zeig2,2);
             schritt++;
             break;
         case 78:
@@ -596,16 +600,16 @@ function buttonItertator() {
         case 85:
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig1,2);
-            animateLeft(zeig2,2.5);
+            animateLeft(zeig1,1);
+            animateLeft(zeig2,1.5);
             schritt++;
             break;
         case 86:
             setDivHalf(pivot);
-            animateLeft(zeig1,3);
-            animateLeft(pivot,3.5);
+            animateLeft(zeig1,2);
+            animateLeft(pivot,2.5);
             setZeig2Normal();
-            animateLeft(zeig2,2);
+            animateLeft(zeig2,1);
             schritt++;
             break;
         case 87:
@@ -646,10 +650,10 @@ function buttonItertator() {
             break;
         case 94:
             setDivHalf(pivot);
-            animateLeft(zeig1,2);
-            animateLeft(pivot,2.5);
+            animateLeft(zeig1,1);
+            animateLeft(pivot,1.5);
             setZeig2Normal();
-            animateLeft(zeig2,1);
+            animateLeft(zeig2,0);
             schritt++;
             break;
         case 95:
@@ -693,18 +697,7 @@ function buttonItertator() {
 }
 
 
-function reset() {
-    schritt = 1;
-    setText("");
-    stylen();
-}
-
-function animateLeft(div, pos) {
-    div.animate({"left": leftStart + widthNormal * (pos - 1)});
-}
-function setGray(div) {
-    div.css("backgroundColor", "#757575");
-}
+/*============ Spezielle Methoden für den Algorithmus ============*/
 function setZeig1Normal() {
     var zeig1 = $('#zeig1');
     zeig1.css({
@@ -751,14 +744,3 @@ function klammerAusblenden() {
     rahmen.css({"display": "none"})
 }
 
-function setText(text) {
-    var div = $('.textField');
-    div.empty();
-    div.append(document.createTextNode(text));
-}
-
-function disableButton(button) {
-    button.css({
-        "backgroundColor": "#757575"
-    });
-}

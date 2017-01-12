@@ -6,87 +6,26 @@
     <script src="jquery-3.1.1.js"></script>
     <link rel="stylesheet" href="theme.css">
     <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("nav ul li").hover(function () {
-                $(this).children("ul").stop().slideDown(200);
-            }, function () {
-                $(this).children("ul").stop().slideUp(200);
-            });
+    <script src="menuScript.js"></script>
+    <script src="mainFunctions.js"></script>
 
 
-
-            $('#insertionSort').click(function () {
-                $('#content').animate({"opacity": 0}, "slow", function () {
-                    $('#content').load("insertionSort/insertionSort.html", function () {
-                        $('#content').animate({"opacity": 1}, "slow");
-                    });
-                });
-
-            });
-            $('#bubbleSort').click(function () {
-                $('#content').animate({"opacity": 0}, "slow", function () {
-                    $('#content').load("bubbleSort/bubbleSort.html", function () {
-                        $('#content').animate({"opacity": 1}, "slow");
-                    });
-                });
-            });
-            $('#quicksortAverage').click(function () {
-                $('#content').animate({"opacity": 0}, "slow", function () {
-                    $('#content').load("quickSort/quicksort.html", function () {
-                        $('#content').animate({"opacity": 1}, "slow");
-                    });
-                });
-            });
-            $('#quicksortWorst').click(function () {
-                $('#content').animate({"opacity": 0}, "slow", function () {
-                    $('#content').load("quichSort/quicksortWorst.html", function () {
-                        $('#content').animate({"opacity": 1}, "slow");
-                    });
-                });
-            });
-            $('#mergeSort').click(function () {
-                $('#content').animate({"opacity": 0}, "slow", function () {
-                    $('#content').load("mergeSort/mergeSort.html", function () {
-                        $('#content').animate({"opacity": 1}, "slow");
-                    });
-                });
-            });
-            $('#linearSearch').click(function () {
-                $('#content').animate({"opacity": 0}, "slow", function () {
-                    $('#content').load("################", function () {
-                        $('#content').animate({"opacity": 1}, "slow");
-                    });
-                });
-            });
-            $('#binarySearch').click(function () {
-                $('#content').animate({"opacity": 0}, "slow", function () {
-                    $('#content').load("binarySearch/binarySearch.html", function () {
-                        $('#content').animate({"opacity": 1}, "slow");
-                    });
-                });
-            });
-        });
-
-
-    </script>
-
-    <style type="text/css">
-
-    </style>
 </head>
 <body>
 <nav>
     <ul>
         <li id="insertionSort">Insertionsort</li>
         <li id="bubbleSort">Bubblesort</li>
+        <!--Beispiel zum einfügen eines Algorithmus in ein Menu-->
+        <!--<li id="ID für die Verlinkung per jQuery auf die entsprechende HTML Datei">Name des Algorithmus</li>-->
         <li>Quicksort
             <ul>
                 <li id="quicksortAverage">Average Case</li>
                 <li id="quicksortWorst">Worst Case</li>
-            </ul>
+                <!--Beispiel zum einfügen eines Algorithmus in ein Untermenu-->
+                <!--<li id="ID für die Verlinkung per jQuery auf die entsprechende HTML Datei">Name des Algorithmus</li>-->
 
+            </ul>
         </li>
         <li id="mergeSort">Mergesort</li>
         <li>Suchalgorithmen

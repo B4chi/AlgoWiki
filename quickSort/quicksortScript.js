@@ -138,7 +138,8 @@ function stylen() {
 
     buttonStep.css({
         "top": topStart + heightStart + 120,
-        "left": leftStart + (widthNormal * 9) / 2 + 20
+        "left": leftStart + (widthNormal * 9) / 2 + 20,
+        "backgroundColor": "darkgoldenrod"
     });
 
     buttonReset.css({
@@ -151,6 +152,8 @@ function stylen() {
         "left": leftStart,
         "width": widthNormal * 9
     });
+    disableButton(buttonReset);
+    buttonItertator();
 
 }
 
@@ -174,6 +177,7 @@ function buttonItertator() {
             schritt++;
             break;
         case 2:
+            enableResetButton();
             setText('Ein Merkmal von Quicksort ist, dass es weniger Vergleiche und Swaps benötigt als andere Algorithmen, so ist es in der Lage, in vielen Fällen schnell zu sortieren.');
             schritt++;
             break;
@@ -652,18 +656,7 @@ function buttonItertator() {
     }
 }
 
-function reset() {
-    schritt = 1;
-    setText("");
-    stylen();
-}
-
-function animateLeft(div, pos) {
-    div.animate({"left": leftStart + widthNormal * pos});
-}
-function setGray(div) {
-    div.css("backgroundColor", "#757575");
-}
+/*============ Spezielle Methoden für den Algorithmus ============*/
 function swap(divA, posA, divB, posB) {
     divA.animate({"left": leftStart + widthNormal * posA});
     divB.animate({"left": leftStart + widthNormal * posB});
@@ -710,16 +703,4 @@ function showKlammer(pos,wid) {
 function klammerAusblenden() {
     var rahmen = $('#rahmenQS');
     rahmen.css({"display": "none"})
-}
-
-function setText(text) {
-    var div = $('.textField');
-    div.empty();
-    div.append(document.createTextNode(text));
-}
-
-function disableButton(button) {
-    button.css({
-        "backgroundColor": "#757575"
-    });
 }
