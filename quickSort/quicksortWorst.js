@@ -206,27 +206,27 @@ function buttonItertator() {
             break;
         case 8:
             setText('Die linke Markierung bewegt sich nach rechts.');
-            animateLeft(zeig1,2);
+            animateLeft(zeig1,1);
             schritt++;
             break;
         case 9:
-            animateLeft(zeig1,3);
+            animateLeft(zeig1,2);
             schritt++;
             break;
         case 10:
-            animateLeft(zeig1,4);
+            animateLeft(zeig1,3);
             schritt++;
             break;
         case 11:
-            animateLeft(zeig1,5);
+            animateLeft(zeig1,4);
             schritt++;
             break;
         case 12:
-            animateLeft(zeig1,6);
+            animateLeft(zeig1,5);
             schritt++;
             break;
         case 13:
-            animateLeft(zeig1,7);
+            animateLeft(zeig1,6);
             schritt++;
             break;
         case 14:
@@ -293,23 +293,23 @@ function buttonItertator() {
             schritt++;
             break;
         case 25:
-            animateLeft(zeig1,2);
+            animateLeft(zeig1,1);
             schritt++;
             break;
         case 26:
-            animateLeft(zeig1,3);
+            animateLeft(zeig1,2);
             schritt++;
             break;
         case 27:
-            animateLeft(zeig1,4);
+            animateLeft(zeig1,3);
             schritt++;
             break;
         case 28:
-            animateLeft(zeig1,5);
+            animateLeft(zeig1,4);
             schritt++;
             break;
         case 29:
-            animateLeft(zeig1,6);
+            animateLeft(zeig1,5);
             schritt++;
             break;
         case 30:
@@ -677,10 +677,10 @@ function buttonItertator() {
             break;
         case 99:
             showKlammer(1,1);
+            setText('Wenn die Zielsequenz nur eine Zahl hat, wird sie als vollständig sortiert betrachtet.');
             schritt++;
             break;
         case 100:
-            setText('Wenn die Zielsequenz nur eine Zahl hat, wird sie als vollständig sortiert betrachtet.');
             setGray(div9);
             schritt++;
             break;
