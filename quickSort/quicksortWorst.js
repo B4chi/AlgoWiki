@@ -696,7 +696,6 @@ function buttonItertator() {
     }
 }
 
-
 /*============ Spezielle Methoden für den Algorithmus ============*/
 function setZeig1Normal() {
     var zeig1 = $('#zeig1');
