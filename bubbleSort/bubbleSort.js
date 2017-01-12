@@ -118,17 +118,18 @@ function stylen() {
         "width": widthNormal * 9 - 5
     });
 
-
+    buttonNext.css({
+        "top": topStart + heightStart + 200,
+        "left": leftStart + (widthNormal * 9) / 2 + 20,
+        "backgroundColor": "darkgoldenrod"
+    });
 
     buttonReset.css({
         "top": topStart + heightStart + 200,
         "left": leftStart + (widthNormal * 9) / 2 - 120
     });
-
-    buttonNext.css({
-        "top": topStart + heightStart + 200,
-        "left": leftStart + (widthNormal * 9) / 2 + 20
-    });
+    disableButton(buttonReset);
+    buttonItertator();
 
 }
 
@@ -148,55 +149,56 @@ function buttonItertator() {
 
     switch (schritt) {
         case 1:
-            textField.text("Bubblesort ist ein Algorithmus, der eine unsortierte Liste durch wiederholtes vertauschen zweier benachbarter Elemente in eine sortierte Liste umwandelt.");
+            setText("Bubblesort ist ein Algorithmus, der eine unsortierte Liste durch wiederholtes vertauschen zweier benachbarter Elemente in eine sortierte Liste umwandelt.");
             schritt++;
             break;
         case 2:
-            textField.text("In unserem Beispiel wollen wir die Liste aufsteigend, also vom kleinsten bis hin zum größten Element sortieren.");
+            enableResetButton();
+            setText("In unserem Beispiel wollen wir die Liste aufsteigend, also vom kleinsten bis hin zum größten Element sortieren.");
             schritt++;
             break;
         case 3:
-            textField.text("Dazu verwenden wir einen Zeiger, der stets auf zwei benachbarte Elemente zeigt. Dieser steht zu Beginn auf den ersten Beiden Elementen der unsortierten Liste.");
+            setText("Dazu verwenden wir einen Zeiger, der stets auf zwei benachbarte Elemente zeigt. Dieser steht zu Beginn auf den ersten Beiden Elementen der unsortierten Liste.");
             schritt++;
             break;
         case 4:
-            textField.text("Nun werden die beiden Werte verglichen. In diesem Falle 5 und 3. Wenn der erste Wert größer ist als der zweite, dann werden die Elemente vertauscht. ");
+            setText("Nun werden die beiden Werte verglichen. In diesem Falle 5 und 3. Wenn der erste Wert größer ist als der zweite, dann werden die Elemente vertauscht. ");
             klammer.css({
                 "visibility": "visible"
             });
             schritt++;
             break;
         case 5:
-            textField.text("Wenn der erste Wert kleiner ist als der zweite oder beide den gleichen Wert haben, dann werden die Positionen beibehalten.");
+            setText("Wenn der erste Wert kleiner ist als der zweite oder beide den gleichen Wert haben, dann werden die Positionen beibehalten.");
             schritt++;
             break;
         case 6:
-            textField.text("Als nächstes rutscht der Zeiger um exakt eine Position weiter und es werden wieder die beiden Elemente auf die der Zeiger zeigt miteinander verglichen.");
+            setText("Als nächstes rutscht der Zeiger um exakt eine Position weiter und es werden wieder die beiden Elemente auf die der Zeiger zeigt miteinander verglichen.");
             swap(div5, 1, div3, 0);
             schritt++;
             break;
         case 7:
-            textField.text("5 ist größer als 4, also werden die Elemente wieder getauscht..");
+            setText("5 ist größer als 4, also werden die Elemente wieder getauscht..");
             moveKlammer(klammer, 2);
             schritt++;
             break;
         case 8:
-            textField.text("..und der Zeiger rutscht wieder um eine Position weiter.");
+            setText("..und der Zeiger rutscht wieder um eine Position weiter.");
             swap(div5, 2, div4, 1);
             schritt++;
             break;
         case 9:
-            textField.text("Jetzt steht der Zeiger auf 5 und 7. Dieses mal darf nicht getauscht werden, da 5 < 7 und der Zeiger verschiebt sich wieder um eine Position nach rechts.");
+            setText("Jetzt steht der Zeiger auf 5 und 7. Dieses mal darf nicht getauscht werden, da 5 < 7 und der Zeiger verschiebt sich wieder um eine Position nach rechts.");
             moveKlammer(klammer, 3);
             schritt++;
             break;
         case 10:
-            textField.text("Dieses Verfahren wird kontinuierlich fortgeführt, bis der Zeiger die komplette Liste abgearbeitet hat.");
+            setText("Dieses Verfahren wird kontinuierlich fortgeführt, bis der Zeiger die komplette Liste abgearbeitet hat.");
             moveKlammer(klammer, 4);
             schritt++;
             break;
         case 11:
-            textField.text("7 > 2, also werden die Elemente getauscht.");
+            setText("7 > 2, also werden die Elemente getauscht.");
             schritt++;
             break;
         case 12:
@@ -204,12 +206,12 @@ function buttonItertator() {
             schritt++;
             break;
         case 13:
-            textField.text("7 < 8, also bleiben die Elemente unverändert.");
+            setText("7 < 8, also bleiben die Elemente unverändert.");
             moveKlammer(klammer, 5);
             schritt++;
             break;
         case 14:
-            textField.text("8 > 6, also werden die Elemente getauscht.");
+            setText("8 > 6, also werden die Elemente getauscht.");
             moveKlammer(klammer, 6);
             schritt++;
             break;
@@ -218,26 +220,26 @@ function buttonItertator() {
             schritt++;
             break;
         case 16:
-            textField.text("8 < 9, also bleiben die Elemente unverändert.");
+            setText("8 < 9, also bleiben die Elemente unverändert.");
             moveKlammer(klammer, 7);
             schritt++;
             break;
         case 17:
-            textField.text("9 > 1, also werden die Elemente getauscht.");
+            setText("9 > 1, also werden die Elemente getauscht.");
             moveKlammer(klammer, 8);
             schritt++;
             break;
         case 18:
-            textField.text("Jetzt wo die gesamte Liste fertig abgearbeitet wurde, sehen wir, dass sich der erste Wert bereits an seiner korrekten Position befindet. In diesem Falle die 9. ");
+            setText("Jetzt wo die gesamte Liste fertig abgearbeitet wurde, sehen wir, dass sich der erste Wert bereits an seiner korrekten Position befindet. In diesem Falle die 9. ");
             swap(div9, 8, div1, 7);
             schritt++;
             break;
         case 19:
-            textField.text("Daher müssen wir uns im folgenden nur noch um die Sortierung der unsortierten Restliste kümmern und können unseren Wert 9 außer acht lassen. ");
+            setText("Daher müssen wir uns im folgenden nur noch um die Sortierung der unsortierten Restliste kümmern und können unseren Wert 9 außer acht lassen. ");
             schritt++;
             break;
         case 20:
-            textField.text("Nun springen wir also mit unserem Zeiger wieder an den Anfang von der besagten Restliste und arbeiten diese mit den bekannten Regeln ab.");
+            setText("Nun springen wir also mit unserem Zeiger wieder an den Anfang von der besagten Restliste und arbeiten diese mit den bekannten Regeln ab.");
             schritt++;
             break;
         case 21:
@@ -282,12 +284,12 @@ function buttonItertator() {
             schritt++;
             break;
         case 31:
-            textField.text("An dieser Stelle wird sehr schön deutlich woher der Algorithmus seinen Namen hat, da in jedem Durchlauf das größte Element der aktuellen Restliste wie eine Blase nach oben 'gebubbelt' wird.");
+            setText("An dieser Stelle wird sehr schön deutlich woher der Algorithmus seinen Namen hat, da in jedem Durchlauf das größte Element der aktuellen Restliste wie eine Blase nach oben 'gebubbelt' wird.");
             setGray(div8);
             schritt++;
             break;
         case 32:
-            textField.text("Diese Vorgänge wiederholen sich so lange, bis die Gesamtliste schließlich komplett sortiert ist.");
+            setText("Diese Vorgänge wiederholen sich so lange, bis die Gesamtliste schließlich komplett sortiert ist.");
             moveKlammer(klammer, 1);
             schritt++;
             break;
@@ -409,7 +411,7 @@ function buttonItertator() {
             schritt++;
             break;
         case 61:
-            textField.text("Die Gesamtliste ist nun vollständig sortiert.");
+            setText("Die Gesamtliste ist nun vollständig sortiert.");
             setGray(div2);
             setGray(div1);
             klammer.css({
@@ -418,27 +420,23 @@ function buttonItertator() {
             schritt++;
             break;
         case 62:
-            textField.text("Leider ist der Algorithmus sehr ineffizient, da für jedes sortierte Element die komplette Restliste durchgegangen werden muss.");
+            setText("Leider ist der Algorithmus sehr ineffizient, da für jedes sortierte Element die komplette Restliste durchgegangen werden muss.");
             schritt++;
             break;
         case 63:
-            textField.text("Bei kleinen Listen mag das kein Problem sein aber wenn die, zu sortierenden Listen sehr groß werden, kann auch der Aufwand enorm hoch werden.");
+            disableButton($('#buttonNext'));
+            setText("Bei kleinen Listen mag das kein Problem sein aber wenn die, zu sortierenden Listen sehr groß werden, kann auch der Aufwand enorm hoch werden.");
     }
 }
 
-function reset() {
-    schritt = 1;
-    stylen();
-}
 
+
+
+/*============ Spezielle Methoden für den Algorithmus ============*/
 function moveKlammer(div, pos) {
     div.animate({"left": leftStart + widthNormal * (pos - 1) + 15});
 }
 function swap(divA, posA, divB, posB) {
     divA.animate({"left": leftStart + widthNormal * posA});
     divB.animate({"left": leftStart + widthNormal * posB});
-}
-
-function setGray(div) {
-    div.css("backgroundColor", "#757575");
 }

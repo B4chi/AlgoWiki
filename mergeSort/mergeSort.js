@@ -46,8 +46,8 @@ function stylen() {
     var rahmen13 = $('#rahmen13');
     var rahmen14 = $('#rahmen14');
 
-    var button = $('#buttonNext');
-    var button2 = $('#buttonReset');
+    var buttonNext = $('#buttonNext');
+    var buttonReset = $('#buttonReset');
     var text = $('.textField');
 
     var windowWidth = window.innerWidth;
@@ -101,15 +101,6 @@ function stylen() {
     });
 
 
-    button.css({
-        "top": topStart + heightStart + 360,
-        "left": leftStart + (widthNormal * 8) / 2 + 20
-    });
-
-    button2.css({
-        "top": topStart + heightStart + 360,
-        "left": leftStart + (widthNormal * 8) / 2 - 120
-    });
 
     text.css({
         "top": topStart + 450,
@@ -120,80 +111,108 @@ function stylen() {
     rahmen1.css({
         "width": widthNormal * 8,
         "left": leftStart - 25,
-        "top": heightStart + topStart - 105
+        "top": heightStart + topStart - 105,
+        "display": "none"
 
     });
     rahmen2.css({
         "width": widthNormal * 4,
         "left": leftStart - 30,
-        "top": heightStart + topStart + 10
+        "top": heightStart + topStart + 10,
+        "display": "none"
 
     });
     rahmen3.css({
         "width": widthNormal * 4 - 2,
         "left": leftStart - 20 + widthNormal * 4,
-        "top": heightStart + topStart + 10
+        "top": heightStart + topStart + 10,
+        "display": "none"
 
     });
     rahmen4.css({
         "width": widthNormal * 2 - 2,
         "left": leftStart - 40,
-        "top": heightStart + topStart + 125
+        "top": heightStart + topStart + 125,
+        "display": "none"
 
     });
     rahmen5.css({
         "width": widthNormal * 2 - 2,
         "left": leftStart - 28 + widthNormal * 2,
-        "top": heightStart + topStart + 125
+        "top": heightStart + topStart + 125,
+        "display": "none"
 
     });
     rahmen6.css({
         "width": widthNormal * 2 - 2,
         "left": leftStart - 20 + widthNormal * 4,
-        "top": heightStart + topStart + 125
+        "top": heightStart + topStart + 125,
+        "display": "none"
 
     });
     rahmen7.css({
         "width": widthNormal * 2 - 2,
         "left": leftStart - 8 + widthNormal * 6,
-        "top": heightStart + topStart + 125
+        "top": heightStart + topStart + 125,
+        "display": "none"
 
     });
     rahmen8.css({
         "width": widthNormal - 2,
         "left": leftStart - 60,
-        "top": heightStart + topStart + 240
+        "top": heightStart + topStart + 240,
+        "display": "none"
     });
     rahmen9.css({
         "width": widthNormal - 2,
         "left": leftStart - 40 + widthNormal,
-        "top": heightStart + topStart + 240
+        "top": heightStart + topStart + 240,
+        "display": "none"
     });
     rahmen10.css({
         "width": widthNormal - 2,
         "left": leftStart - 20 + widthNormal * 2,
-        "top": heightStart + topStart + 240
+        "top": heightStart + topStart + 240,
+        "display": "none"
     });
     rahmen11.css({
         "width": widthNormal - 2,
         "left": leftStart + widthNormal * 3,
-        "top": heightStart + topStart + 240
+        "top": heightStart + topStart + 240,
+        "display": "none"
     });
     rahmen12.css({
         "width": widthNormal - 2,
         "left": leftStart + 20 + widthNormal * 4,
-        "top": heightStart + topStart + 240
+        "top": heightStart + topStart + 240,
+        "display": "none"
     });
     rahmen13.css({
         "width": widthNormal - 2,
         "left": leftStart + 40 + widthNormal * 5,
-        "top": heightStart + topStart + 240
+        "top": heightStart + topStart + 240,
+        "display": "none"
     });
     rahmen14.css({
         "width": widthNormal - 2,
         "left": leftStart + 60 + widthNormal * 6,
-        "top": heightStart + topStart + 240
+        "top": heightStart + topStart + 240,
+        "display": "none"
     });
+
+    buttonNext.css({
+        "top": topStart + heightStart + 360,
+        "left": leftStart + (widthNormal * 8) / 2 + 20,
+        "backgroundColor": "darkgoldenrod"
+    });
+
+    buttonReset.css({
+        "top": topStart + heightStart + 360,
+        "left": leftStart + (widthNormal * 8) / 2 - 120
+    });
+    disableButton(buttonReset);
+    buttonItertator();
+
 
 
 
@@ -233,6 +252,7 @@ function buttonItertator() {
             schritt++;
             break;
         case 2:
+            enableResetButton();
             setText('Die Liste wird in zwei Hälfen geteilt. Dabei entstehen neue Teillisten, mit denen weiter gearbeitet wird.');
             showContainer(rahmen1);
             schritt++;
@@ -357,7 +377,6 @@ function buttonItertator() {
             break;
         case 17:
             animatePosition(div6, 0, 0, 0);
-            setGray(div6);
             schritt++;
             break;
         case 18:
@@ -399,42 +418,21 @@ function buttonItertator() {
             schritt++;
             break;
         case 25:
+            disableButton($('#buttonNext'));
             setText(' Durch die rekursive Funktionsweise arbeitet der Megersort Algorithmus sehr effizient.');
             break;
     }
 }
 
-
+/*============ Spezielle Methoden für den Algorithmus ============*/
 function animatePosition(div, hPos, anpassung, vPos) {
     div.animate({"left": (leftStart + widthNormal * hPos) + anpassung});
     div.animate({"top": (topStart - div.html() * 10) + (115 * vPos)});
-
 }
-
 function showContainer(div) {
     div.css({"display": "block"});
 }
 function hideContainer(div) {
     div.css({"display": "none"});
-}
-function setGray(div) {
-    div.css("backgroundColor", "#757575");
-}
-
-function setText(text) {
-    var div = $('.textField');
-    div.empty();
-    div.append(document.createTextNode(text));
-}
-
-function reset() {
-    stylen();
-    setText("");
-    schritt = 1;
-}
-function disableButton(button) {
-    button.css({
-        "backgroundColor": "#757575"
-    });
 }
 

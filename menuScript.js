@@ -29,7 +29,7 @@ $(document).ready(function () {
     });
     $('#quicksortWorst').click(function () {
         $('#content').animate({"opacity": 0}, "slow", function () {
-            $('#content').load("quichSort/quicksortWorst.html", function () {
+            $('#content').load("quickSort/quicksortWorst.html", function () {
                 $('#content').animate({"opacity": 1}, "slow");
             });
         });
