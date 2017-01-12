@@ -195,6 +195,8 @@ function stylen() {
         "top": heightStart + topStart + 240
     });
 
+
+
 }
 
 
@@ -311,14 +313,12 @@ function buttonItertator() {
             break;
         case 10:
             setText('Wenn sich mehrere Elemente in den Tellisten befinden, werden beim zusammensetzten jeweils die Ersten Elemente der Teillisten verglichen.');
-
             schritt++;
             break;
         case 11:
             setText('Im Beispiel wird die 4 mit der 3 verglichen und deren Positionen getauscht.');
             animatePosition(div2, 1, -22, 1);
             animatePosition(div3, 0, -22, 1);
-
             schritt++;
             break;
         case 12:
@@ -401,7 +401,6 @@ function buttonItertator() {
         case 25:
             setText(' Durch die rekursive Funktionsweise arbeitet der Megersort Algorithmus sehr effizient.');
             break;
-
     }
 }
 
