@@ -5,6 +5,19 @@ $(document).ready(function () {
         $(this).children("ul").stop().slideUp(200);
     });
 
+    $('#content').animate({"opacity": 0}, "slow", function () {
+        $('#content').load("start.html", function () {
+            $('#content').animate({"opacity": 1}, "slow");
+        });
+    });
+
+    $('#home').click(function () {
+        $('#content').animate({"opacity": 0}, "slow", function () {
+            $('#content').load("insertionSort/insertionSort.html", function () {
+                $('#content').animate({"opacity": 1}, "slow");
+            });
+        });
+    });
     $('#insertionSort').click(function () {
         $('#content').animate({"opacity": 0}, "slow", function () {
             $('#content').load("insertionSort/insertionSort.html", function () {

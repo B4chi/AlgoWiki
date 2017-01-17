@@ -9,7 +9,6 @@ var leftStart = 300;
 var heightStart = 50;
 var widthNormal = 50;
 
-
 $(document).ready(function () {
     stylen();
 
@@ -18,7 +17,7 @@ $(document).ready(function () {
     });
     $('#buttonReset').click(function () {
         reset();
-    })
+    });
 });
 
 function stylen() {
