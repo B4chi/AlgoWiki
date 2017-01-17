@@ -26,8 +26,4 @@ function reset() {
     setText("");
     stylen();
 }
-function setText(text) {
-    var div = $('.textField');
-    div.empty();
-    div.append(document.createTextNode(text));
-}
+

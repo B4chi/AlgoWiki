@@ -52,6 +52,7 @@ main {
     background-color: white;
     box-shadow: 0 0 10px 10px white;
 }
+
 #homeDiv {
     font-size: large;
     text-align: left;
@@ -157,4 +158,7 @@ main {
     position: fixed;
     border-radius: 3px;
     display: none;
+}
+.selected {
+    color: red;
 }

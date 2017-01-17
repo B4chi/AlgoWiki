@@ -5,20 +5,11 @@ $(document).ready(function () {
         $(this).children("ul").stop().slideUp(200);
     });
 
-    $('#content').animate({"opacity": 0}, "slow", function () {
-        $('#content').load("start.html", function () {
-            $('#content').animate({"opacity": 1}, "slow");
-        });
-    });
 
-    $('#home').click(function () {
-        $('#content').animate({"opacity": 0}, "slow", function () {
-            $('#content').load("insertionSort/insertionSort.html", function () {
-                $('#content').animate({"opacity": 1}, "slow");
-            });
-        });
-    });
+
     $('#insertionSort').click(function () {
+        deselect();
+        $('#insertionSort').addClass('selected');
         $('#content').animate({"opacity": 0}, "slow", function () {
             $('#content').load("insertionSort/insertionSort.html", function () {
                 $('#content').animate({"opacity": 1}, "slow");
@@ -27,6 +18,8 @@ $(document).ready(function () {
 
     });
     $('#bubbleSort').click(function () {
+        deselect();
+        $('#bubbleSort').addClass('selected');
         $('#content').animate({"opacity": 0}, "slow", function () {
             $('#content').load("bubbleSort/bubbleSort.html", function () {
                 $('#content').animate({"opacity": 1}, "slow");
@@ -34,6 +27,9 @@ $(document).ready(function () {
         });
     });
     $('#quicksortAverage').click(function () {
+        deselect();
+        $('#quickSort').addClass('selected');
+        $('#quicksortAverage').addClass('selected');
         $('#content').animate({"opacity": 0}, "slow", function () {
             $('#content').load("quickSort/quicksort.html", function () {
                 $('#content').animate({"opacity": 1}, "slow");
@@ -41,6 +37,10 @@ $(document).ready(function () {
         });
     });
     $('#quicksortWorst').click(function () {
+        deselect();
+        $('#quickSort').addClass('selected');
+        $('#quicksortWorst').addClass('selected');
+
         $('#content').animate({"opacity": 0}, "slow", function () {
             $('#content').load("quickSort/quicksortWorst.html", function () {
                 $('#content').animate({"opacity": 1}, "slow");
@@ -48,6 +48,9 @@ $(document).ready(function () {
         });
     });
     $('#mergeSort').click(function () {
+        deselect();
+        $('#mergeSort').addClass('selected');
+
         $('#content').animate({"opacity": 0}, "slow", function () {
             $('#content').load("mergeSort/mergeSort.html", function () {
                 $('#content').animate({"opacity": 1}, "slow");
@@ -55,6 +58,10 @@ $(document).ready(function () {
         });
     });
     $('#linearSearch').click(function () {
+        deselect();
+        $('#linearSearch').addClass('selected');
+        $('#searchAlgorithm').addClass('selected');
+
         $('#content').animate({"opacity": 0}, "slow", function () {
             $('#content').load("################", function () {
                 $('#content').animate({"opacity": 1}, "slow");
@@ -63,6 +70,10 @@ $(document).ready(function () {
     });
 
     $('#binarySearch').click(function () {
+        deselect();
+        $('#binarySearch').addClass('selected');
+        $('#searchAlgorithm').addClass('selected');
+
         $('#content').animate({"opacity": 0}, "slow", function () {
             $('#content').load("binarySearch/binarySearch.html", function () {
                 $('#content').animate({"opacity": 1}, "slow");
@@ -72,7 +83,8 @@ $(document).ready(function () {
 
 
     /* Codesegment zum einfügen neuer Algorithmen
-
+     deselect();
+     $('#ID des Listenelements in der Navigationsleiste').addClass('selected');
      $('#ID des <li> Elements').click(function () {
         $('#content').animate({"opacity": 0}, "slow", function () {
             $('#content').load("Ordnername/Dateiname.html", function () {
@@ -83,4 +95,19 @@ $(document).ready(function () {
      */
 
 });
+
+function deselect() {
+    $('#insertionSort').removeClass('selected');
+    $('#bubbleSort').removeClass('selected');
+    $('#quicksortAverage').removeClass('selected');
+    $('#quickSort').removeClass('selected');
+    $('#quicksortWorst').removeClass('selected');
+    $('#mergeSort').removeClass('selected');
+    $('#searchAlgorithm').removeClass('selected');
+    $('#linearSearch').removeClass('selected');
+    $('#binarySearch').removeClass('selected');
+    // $('#ID des Listenelements in der Navigationsleiste').removeClass('selected');
+
+
+}
 
