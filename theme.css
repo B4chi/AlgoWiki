@@ -56,7 +56,10 @@ main {
 #homeDiv {
     font-size: large;
     text-align: left;
+    text-align: center;
     margin: 100px;
+    padding: 40px;
+    border: #dadada 3px solid;
 }
 #content {
     margin: 0 auto;
