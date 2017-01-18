@@ -83,10 +83,10 @@ $(document).ready(function () {
 
 
     /* Codesegment zum einfügen neuer Algorithmen
+     $('#ID des <li> Elements').click(function () {
      deselect();
      $('#ID des Listenelements in der Navigationsleiste').addClass('selected');
-     $('#ID des <li> Elements').click(function () {
-        $('#content').animate({"opacity": 0}, "slow", function () {
+     $('#content').animate({"opacity": 0}, "slow", function () {
             $('#content').load("Ordnername/Dateiname.html", function () {
                 $('#content').animate({"opacity": 1}, "slow");
             });
