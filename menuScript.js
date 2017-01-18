@@ -57,17 +57,7 @@ $(document).ready(function () {
             });
         });
     });
-    $('#linearSearch').click(function () {
-        deselect();
-        $('#linearSearch').addClass('selected');
-        $('#searchAlgorithm').addClass('selected');
 
-        $('#content').animate({"opacity": 0}, "slow", function () {
-            $('#content').load("################", function () {
-                $('#content').animate({"opacity": 1}, "slow");
-            });
-        });
-    });
 
     $('#binarySearch').click(function () {
         deselect();
@@ -104,8 +94,8 @@ function deselect() {
     $('#quicksortWorst').removeClass('selected');
     $('#mergeSort').removeClass('selected');
     $('#searchAlgorithm').removeClass('selected');
-    $('#linearSearch').removeClass('selected');
     $('#binarySearch').removeClass('selected');
+
     // $('#ID des Listenelements in der Navigationsleiste').removeClass('selected');
 
 
