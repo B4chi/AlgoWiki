@@ -247,8 +247,8 @@ function buttonItertator() {
         case 17:
             setText('Wenn sowohl die linke als auch die rechte Markierung gestoppt sind, werden die markierten Zahlen vertauscht.');
             swap(div3, 6, div7, 2);
-            setZeig1Normal(zeig1);
-            setZeig2Normal(zeig2);
+            setZeig1Normal();
+            setZeig2Normal();
             schritt++;
             break;
         case 18:
@@ -349,9 +349,9 @@ function buttonItertator() {
         case 38:
             setText('Die 3 Markierungen werden plaziert.');
             einblenden(zeig1, 0);
-            setZeig1Normal(zeig1);
+            setZeig1Normal();
             einblenden(zeig2, 3);
-            setZeig2Normal(zeig2);
+            setZeig2Normal();
             einblenden(pivot, 4);
             schritt++;
             break;
@@ -369,8 +369,8 @@ function buttonItertator() {
             break;
         case 42:
             swap(div1, 3, div4, 0);
-            setZeig1Normal(zeig1);
-            setZeig2Normal(zeig2);
+            setZeig1Normal();
+            setZeig2Normal();
             schritt++;
             break;
         case 43:
@@ -448,9 +448,9 @@ function buttonItertator() {
         case 57:
             setText('Die 3 Markierungen werden plaziert.');
             einblenden(zeig1, 2);
-            setZeig1Normal(zeig1);
+            setZeig1Normal();
             einblenden(zeig2, 3);
-            setZeig2Normal(zeig2);
+            setZeig2Normal();
             einblenden(pivot, 4);
             schritt++;
             break;
@@ -467,7 +467,7 @@ function buttonItertator() {
             setDivHalf(pivot);
             animateLeft(zeig1, 4);
             animateLeft(pivot, 4.5);
-            setZeig2Normal(zeig2);
+            setZeig2Normal();
             animateLeft(zeig2, 3);
             schritt++;
             break;
@@ -505,9 +505,9 @@ function buttonItertator() {
             break;
         case 66:
             einblenden(zeig1, 2);
-            setZeig1Normal(zeig1);
+            setZeig1Normal();
             einblenden(zeig2, 2.5);
-            setZeig2Normal(zeig2);
+            setZeig2Normal();
             setDivHalf(zeig1);
             setDivHalf(zeig2);
             einblenden(pivot, 3);
@@ -556,9 +556,9 @@ function buttonItertator() {
             break;
         case 76:
             einblenden(zeig1, 6);
-            setZeig1Normal(zeig1);
+            setZeig1Normal();
             einblenden(zeig2, 7);
-            setZeig2Normal(zeig2);
+            setZeig2Normal();
             einblenden(pivot, 8);
             schritt++;
             break;
@@ -571,7 +571,7 @@ function buttonItertator() {
             break;
         case 78:
             animateLeft(zeig2, 7);
-            setZeig2Normal(zeig2);
+            setZeig2Normal();
             setDivHalf(pivot);
             animateLeft(zeig1, 8);
             animateLeft(pivot, 8.5);
@@ -603,9 +603,9 @@ function buttonItertator() {
             break;
         case 84:
             einblenden(zeig1, 6);
-            setZeig1Normal(zeig1);
+            setZeig1Normal();
             einblenden(zeig2, 6.5);
-            setZeig2Normal(zeig2);
+            setZeig2Normal();
             setDivHalf(zeig1);
             setDivHalf(zeig2);
             einblenden(pivot, 7);
@@ -660,16 +660,18 @@ function swap(divA, posA, divB, posB) {
     divA.animate({"left": leftStart + widthNormal * posA});
     divB.animate({"left": leftStart + widthNormal * posB});
 }
-function setZeig1Normal(zeig) {
-    zeig.css({
-        "height": heightStart + zeig.html() * 5,
+function setZeig1Normal() {
+    var zeig1 = $('#zeig1');
+    zeig1.css({
+        "height": heightStart + zeig1.html() * 5,
         "width": 40,
         "backgroundColor": "blue"
     });
 }
-function setZeig2Normal(zeig) {
-    zeig.css({
-        "height": heightStart + zeig.html() * 5,
+function setZeig2Normal() {
+    var zeig2 = $('#zeig2');
+    zeig2.css({
+        "height": heightStart + zeig2.html() * 5,
         "width": 40,
         "backgroundColor": "red"
     });
