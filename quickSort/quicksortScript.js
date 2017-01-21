@@ -169,6 +169,7 @@ function buttonItertator() {
     var zeig1 = $('#zeig1');
     var zeig2 = $('#zeig2');
     var pivot = $('#pivot');
+    var rahmen = $('#rahmenQS');
 
     switch (schritt) {
         case 1:
@@ -320,7 +321,7 @@ function buttonItertator() {
             schritt++;
             break;
         case 33:
-            klammerAusblenden();
+            ausblenden(rahmen);
             schritt++;
             break;
         case 34:
@@ -336,7 +337,7 @@ function buttonItertator() {
             schritt++;
             break;
         case 36:
-            klammerAusblenden();
+            ausblenden(rahmen);
             setText('Eine weitere Runde von Operationen wird rekursiv auf beiden Sequenzen durchgeführt, die durch die Division erzeugt werden.');
             schritt++;
             break;
@@ -407,7 +408,7 @@ function buttonItertator() {
             schritt++;
             break;
         case 50:
-            klammerAusblenden();
+            ausblenden(rahmen);
             setText('Die Runde der Operationen ist abgeschlossen...');
             schritt++;
             break;
@@ -424,7 +425,7 @@ function buttonItertator() {
             schritt++;
             break;
         case 53:
-            klammerAusblenden();
+            ausblenden(rahmen);
             setText('Eine weitere Runde von Operationen wird rekursiv wiederholt.');
             schritt++;
             break;
@@ -494,7 +495,7 @@ function buttonItertator() {
             schritt++;
             break;
         case 64:
-            klammerAusblenden();
+            ausblenden(rahmen);
             setText('Danach werden die gleichen Vorgänge wiederholt, bis alle Zahlen vollständig sortiert sind.');
             schritt++;
             break;
@@ -533,7 +534,7 @@ function buttonItertator() {
             schritt++;
             break;
         case 71:
-            klammerAusblenden();
+            ausblenden(rahmen);
             schritt++;
             break;
         case 72:
@@ -546,7 +547,7 @@ function buttonItertator() {
             schritt++;
             break;
         case 74:
-            klammerAusblenden();
+            ausblenden(rahmen);
             schritt++;
             break;
         case 75:
@@ -593,7 +594,7 @@ function buttonItertator() {
             schritt++;
             break;
         case 82:
-            klammerAusblenden();
+            ausblenden(rahmen);
             schritt++;
             break;
         case 83:
@@ -631,7 +632,7 @@ function buttonItertator() {
             schritt++;
             break;
         case 89:
-            klammerAusblenden();
+            ausblenden(rahmen);
             schritt++;
             break;
         case 90:
@@ -644,7 +645,7 @@ function buttonItertator() {
             schritt++;
             break;
         case 92:
-            klammerAusblenden();
+            ausblenden(rahmen);
             setText('Alle Zahlen wurden vollständig sortiert.');
             schritt++;
             break;
@@ -700,8 +701,4 @@ function showKlammer(pos,wid) {
         "left": leftStart - 5 + widthNormal * pos,
         "width": widthNormal * wid
     })
-}
-function klammerAusblenden() {
-    var rahmen = $('#rahmenQS');
-    rahmen.css({"display": "none"})
 }
