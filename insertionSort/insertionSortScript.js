@@ -102,7 +102,6 @@ function stylen() {
     buttonNext.css({
         "top": topStart + heightStart + 200,
         "left": leftStart + (widthNormal * 9) / 2 + 20,
-        "backgroundColor": "darkgoldenrod"
     });
 
     buttonReset.css({
@@ -115,7 +114,6 @@ function stylen() {
         "left": leftStart -15,
         "width": widthNormal*9
     });
-    disableButton(buttonReset);
     algo();
 
 }
@@ -142,7 +140,6 @@ function algo() {
             schritt++;
             break;
         case 2:
-            enableResetButton();
             setGray(div1);
             setText('Zu beginn wird das am weitesten links stehende Element der Liste als sortiert angesehen.')
             schritt++;
@@ -330,7 +327,6 @@ function algo() {
             break;
         case 42:
             setText('Wenn alle Elemente als sortiert makiert sind ist die Sortierung der Gesamtliste abgeschlossen.');
-            disableButton($('#buttonNext'));
             break;
 
     }

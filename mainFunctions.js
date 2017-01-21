@@ -1,16 +1,5 @@
-
-function disableButton(button) {
-    button.css({
-        "backgroundColor": "#757575"
-    });
-}
 function animateItem(div, pos) {
     div.animate({"left": leftStart + widthNormal * pos});
-}
-function enableResetButton() {
-    $('#buttonReset').css({
-        "backgroundColor": "limegreen"
-    });
 }
 function setGray(div) {
     div.css("backgroundColor", "#757575");

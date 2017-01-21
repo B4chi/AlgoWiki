@@ -139,7 +139,6 @@ function stylen() {
     buttonNext.css({
         "top": topStart + heightStart + 120,
         "left": leftStart + (widthNormal * 9) / 2 + 20,
-        "backgroundColor": "darkgoldenrod"
     });
 
     buttonReset.css({
@@ -152,7 +151,6 @@ function stylen() {
         "left": leftStart,
         "width": widthNormal * 9
     });
-    disableButton(buttonReset);
     algo();
 }
 
@@ -178,7 +176,6 @@ function algo() {
             break;
         case 2:
             setText('In diesem Fall wird der worst case von Quicksort dargestellt');
-            enableResetButton();
             schritt++;
             break;
         case 3:
@@ -692,7 +689,6 @@ function algo() {
             break;
         case 102:
             setText('Damit ist die Darstellung des worst case abgeschlossen und man merkt das es sich um die schlechteste Effizienz handelt.');
-            disableButton($('#buttonNext'));
             break;
     }
 }

@@ -121,14 +121,13 @@ function stylen() {
     buttonNext.css({
         "top": topStart + heightStart + 200,
         "left": leftStart + (widthNormal * 9) / 2 + 20,
-        "backgroundColor": "darkgoldenrod"
     });
 
     buttonReset.css({
         "top": topStart + heightStart + 200,
         "left": leftStart + (widthNormal * 9) / 2 - 120
     });
-    disableButton(buttonReset);
+
     algo();
 
 }
@@ -153,7 +152,6 @@ function algo() {
             schritt++;
             break;
         case 2:
-            enableResetButton();
             setText("In unserem Beispiel wollen wir die Liste aufsteigend, also vom kleinsten bis hin zum größten Element sortieren.");
             schritt++;
             break;
@@ -424,7 +422,6 @@ function algo() {
             schritt++;
             break;
         case 63:
-            disableButton($('#buttonNext'));
             setText("Bei kleinen Listen mag das kein Problem sein aber wenn die, zu sortierenden Listen sehr groß werden, kann auch der Aufwand enorm hoch werden.");
     }
 }

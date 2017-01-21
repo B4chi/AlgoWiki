@@ -203,14 +203,12 @@ function stylen() {
     buttonNext.css({
         "top": topStart + heightStart + 360,
         "left": leftStart + (widthNormal * 8) / 2 + 20,
-        "backgroundColor": "darkgoldenrod"
     });
 
     buttonReset.css({
         "top": topStart + heightStart + 360,
         "left": leftStart + (widthNormal * 8) / 2 - 120
     });
-    disableButton(buttonReset);
     algo();
 
 
@@ -252,7 +250,7 @@ function algo() {
             schritt++;
             break;
         case 2:
-            enableResetButton();
+
             setText('Die Liste wird in zwei Hälfen geteilt. Dabei entstehen neue Teillisten, mit denen weiter gearbeitet wird.');
             showContainer(rahmen1);
             schritt++;
@@ -418,7 +416,6 @@ function algo() {
             schritt++;
             break;
         case 25:
-            disableButton($('#buttonNext'));
             setText(' Durch die rekursive Funktionsweise arbeitet der Megersort Algorithmus sehr effizient.');
             break;
     }

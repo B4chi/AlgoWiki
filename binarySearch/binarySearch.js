@@ -132,7 +132,7 @@ function stylen() {
     buttonNext.css({
         "top": topStart + heightStart + 200,
         "left": leftStart + (widthNormal * 9) / 2 + 20,
-        "backgroundColor": "darkgoldenrod"
+
 
     });
 
@@ -141,7 +141,6 @@ function stylen() {
         "left": leftStart + (widthNormal * 9) / 2 - 120
     });
 
-    disableButton(buttonReset);
     algo();
 
 }
@@ -167,7 +166,6 @@ function algo() {
             schritt++;
             break;
         case 2:
-            enableResetButton();
             setText("Zu Beginn steht der Zeiger auf dem mittlersten Element der Liste. Falls die Liste eine gerade Anzahl von Elementen besitzt wird das erste, der beiden in Frage kommenden Elemente gewählt.");
             moveArrow(arrow, 5);
             showArrow(arrow, "visible");
@@ -233,7 +231,6 @@ function algo() {
             break;
         case 12:
             setText("Durch die Rekursion arbeitet der Algorithmus außerordentlich effizient.");
-            disableButton($('#buttonNext'));
             break;
     }
 }

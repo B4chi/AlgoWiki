@@ -112,14 +112,12 @@ function stylen() {
     buttonNext.css({
         "top": topStart + heightStart + 200,
         "left": leftStart + (widthNormal * 9) / 2 + 20,
-        "backgroundColor": "darkgoldenrod"
     });
 
     buttonReset.css({
         "top": topStart + heightStart + 200,
         "left": leftStart + (widthNormal * 9) / 2 - 120
     });
-    disableButton(buttonReset);
 }
 
 

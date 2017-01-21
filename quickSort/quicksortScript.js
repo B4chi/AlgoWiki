@@ -138,7 +138,6 @@ function stylen() {
     buttonStep.css({
         "top": topStart + heightStart + 120,
         "left": leftStart + (widthNormal * 9) / 2 + 20,
-        "backgroundColor": "darkgoldenrod"
     });
 
     buttonReset.css({
@@ -151,7 +150,7 @@ function stylen() {
         "left": leftStart,
         "width": widthNormal * 9
     });
-    disableButton(buttonReset);
+
     algo();
 
 }
@@ -177,7 +176,6 @@ function algo() {
             schritt++;
             break;
         case 2:
-            enableResetButton();
             setText('Ein Merkmal von Quicksort ist, dass es weniger Vergleiche und Swaps benötigt als andere Algorithmen, so ist es in der Lage, in vielen Fällen schnell zu sortieren.');
             schritt++;
             break;
@@ -651,7 +649,6 @@ function algo() {
             break;
         case 93:
             setText('Damit ist die Erläuterung von Quicksort abgeschlossen.');
-            disableButton($('#buttonNext'));
             break;
     }
 }
