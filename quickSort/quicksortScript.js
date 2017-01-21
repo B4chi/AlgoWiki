@@ -212,11 +212,11 @@ function algo() {
             break;
         case 9:
             setText('Die linke Markierung bewegt sich nach rechts');
-            animateLeft(zeig1, 1);
+            animateItem(zeig1, 1);
             schritt++;
             break;
         case 10:
-            animateLeft(zeig1, 2);
+            animateItem(zeig1, 2);
             schritt++;
             break;
         case 11:
@@ -237,7 +237,7 @@ function algo() {
             schritt++;
             break;
         case 15:
-            animateLeft(zeig2, 6);
+            animateItem(zeig2, 6);
             schritt++;
             break;
         case 16:
@@ -269,15 +269,15 @@ function algo() {
             schritt++;
             break;
         case 22:
-            animateLeft(zeig1, 3);
+            animateItem(zeig1, 3);
             schritt++;
             break;
         case 23:
-            animateLeft(zeig1, 4);
+            animateItem(zeig1, 4);
             schritt++;
             break;
         case 24:
-            animateLeft(zeig1, 5);
+            animateItem(zeig1, 5);
             schritt++;
             break;
         case 25:
@@ -292,7 +292,7 @@ function algo() {
         case 27:
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig2, 5.5);
+            animateItem(zeig2, 5.5);
             schritt++;
             break;
         case 28:
@@ -375,7 +375,7 @@ function algo() {
             schritt++;
             break;
         case 43:
-            animateLeft(zeig1, 1);
+            animateItem(zeig1, 1);
             schritt++;
             break;
         case 44:
@@ -383,13 +383,13 @@ function algo() {
             schritt++;
             break;
         case 45:
-            animateLeft(zeig2, 2);
+            animateItem(zeig2, 2);
             schritt++;
             break;
         case 46:
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig2, 1.5);
+            animateItem(zeig2, 1.5);
             schritt++;
             break;
         case 47:
@@ -459,17 +459,17 @@ function algo() {
             setText('Die linke Markierung bewegt sich nach rechts.');
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig1, 3);
-            animateLeft(zeig2, 3.5);
+            animateItem(zeig1, 3);
+            animateItem(zeig2, 3.5);
             schritt++;
             break;
         case 59:
             setText('Selbst wenn die linke Markierung in die rechte Markierung fährt, hört sie nicht auf. Sie unterscheidet sich von der rechten Markierung in dieser Hinsicht.');
             setDivHalf(pivot);
-            animateLeft(zeig1, 4);
-            animateLeft(pivot, 4.5);
+            animateItem(zeig1, 4);
+            animateItem(pivot, 4.5);
             setZeig2Normal();
-            animateLeft(zeig2, 3);
+            animateItem(zeig2, 3);
             schritt++;
             break;
         case 60:
@@ -566,16 +566,16 @@ function algo() {
         case 77:
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig1, 7);
-            animateLeft(zeig2, 7.5);
+            animateItem(zeig1, 7);
+            animateItem(zeig2, 7.5);
             schritt++;
             break;
         case 78:
-            animateLeft(zeig2, 7);
+            animateItem(zeig2, 7);
             setZeig2Normal();
             setDivHalf(pivot);
-            animateLeft(zeig1, 8);
-            animateLeft(pivot, 8.5);
+            animateItem(zeig1, 8);
+            animateItem(pivot, 8.5);
             schritt++;
             break;
         case 79:

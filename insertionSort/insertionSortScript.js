@@ -168,8 +168,8 @@ function algo() {
             schritt++;
             break;
         case 7:
-            animateLeft(div1, 1);
-            animateLeft(div2, 0);
+            animateItem(div1, 1);
+            animateItem(div2, 0);
             setText('In diesem Fall ist die 5 größer als die 3. Also werden die beiden Elemente getauscht.')
             schritt++;
             break;
@@ -193,8 +193,8 @@ function algo() {
             break;
         case 12:
             setText("5 ist größer als 4, also werden die beiden Elemente getauscht.");
-            animateLeft(div3, 1);
-            animateLeft(div1, 2);
+            animateItem(div3, 1);
+            animateItem(div1, 2);
             schritt++;
             break;
         case 13:
@@ -223,23 +223,23 @@ function algo() {
             schritt++;
             break;
         case 19:
-            animateLeft(div5, 3);
-            animateLeft(div4, 4);
+            animateItem(div5, 3);
+            animateItem(div4, 4);
             schritt++;
             break;
         case 20:
-            animateLeft(div5, 2);
-            animateLeft(div1, 3);
+            animateItem(div5, 2);
+            animateItem(div1, 3);
             schritt++;
             break;
         case 21:
-            animateLeft(div5, 1);
-            animateLeft(div3, 2);
+            animateItem(div5, 1);
+            animateItem(div3, 2);
             schritt++;
             break;
         case 22:
-            animateLeft(div5, 0);
-            animateLeft(div2, 1);
+            animateItem(div5, 0);
+            animateItem(div2, 1);
             schritt++;
             break;
         case 23:
@@ -259,13 +259,13 @@ function algo() {
             schritt++;
             break;
         case 27:
-            animateLeft(div7, 5);
-            animateLeft(div6, 6);
+            animateItem(div7, 5);
+            animateItem(div6, 6);
             schritt++;
             break;
         case 28:
-            animateLeft(div7, 4);
-            animateLeft(div4, 5);
+            animateItem(div7, 4);
+            animateItem(div4, 5);
             schritt++;
             break;
         case 29:
@@ -285,43 +285,43 @@ function algo() {
             schritt++;
             break;
         case 33:
-            animateLeft(div9, 7);
-            animateLeft(div8, 8);
+            animateItem(div9, 7);
+            animateItem(div8, 8);
             schritt++;
             break;
         case 34:
-            animateLeft(div9, 6);
-            animateLeft(div6, 7);
+            animateItem(div9, 6);
+            animateItem(div6, 7);
             schritt++;
             break;
         case 35:
-            animateLeft(div9, 5);
-            animateLeft(div4, 6);
+            animateItem(div9, 5);
+            animateItem(div4, 6);
             schritt++;
             break;
         case 36:
-            animateLeft(div9, 4);
-            animateLeft(div7, 5);
+            animateItem(div9, 4);
+            animateItem(div7, 5);
             schritt++;
             break;
         case 37:
-            animateLeft(div9, 3);
-            animateLeft(div1, 4);
+            animateItem(div9, 3);
+            animateItem(div1, 4);
             schritt++;
             break;
         case 38:
-            animateLeft(div9, 2);
-            animateLeft(div3, 3);
+            animateItem(div9, 2);
+            animateItem(div3, 3);
             schritt++;
             break;
         case 39:
-            animateLeft(div9, 1);
-            animateLeft(div2, 2);
+            animateItem(div9, 1);
+            animateItem(div2, 2);
             schritt++;
             break;
         case 40:
-            animateLeft(div9, 0);
-            animateLeft(div5, 1);
+            animateItem(div9, 0);
+            animateItem(div5, 1);
             schritt++;
             break;
         case 41:

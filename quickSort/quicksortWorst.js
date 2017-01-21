@@ -207,44 +207,44 @@ function algo() {
             break;
         case 8:
             setText('Die linke Markierung bewegt sich nach rechts.');
-            animateLeft(zeig1,1);
+            animateItem(zeig1,1);
             schritt++;
             break;
         case 9:
-            animateLeft(zeig1,2);
+            animateItem(zeig1,2);
             schritt++;
             break;
         case 10:
-            animateLeft(zeig1,3);
+            animateItem(zeig1,3);
             schritt++;
             break;
         case 11:
-            animateLeft(zeig1,4);
+            animateItem(zeig1,4);
             schritt++;
             break;
         case 12:
-            animateLeft(zeig1,5);
+            animateItem(zeig1,5);
             schritt++;
             break;
         case 13:
-            animateLeft(zeig1,6);
+            animateItem(zeig1,6);
             schritt++;
             break;
         case 14:
             setText('Selbst wenn die linke Markierung in die rechte Markierung fährt, hört sie nicht auf. Sie unterscheidet sich von der rechten Markierung in dieser Hinsicht.');
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig1,7);
-            animateLeft(zeig2,7.5);
+            animateItem(zeig1,7);
+            animateItem(zeig2,7.5);
             schritt++;
             break;
         case 15:
             setText('Wenn die linke Markierung eine Zahl erreicht, die größer oder gleich der Pivotnummer ist, hört sie auf sich zu bewegen.');
             setDivHalf(pivot);
-            animateLeft(zeig1,8);
-            animateLeft(pivot,8.5);
+            animateItem(zeig1,8);
+            animateItem(pivot,8.5);
             setZeig2Normal();
-            animateLeft(zeig2,7);
+            animateItem(zeig2,7);
             schritt++;
             break;
         case 16:
@@ -294,38 +294,38 @@ function algo() {
             schritt++;
             break;
         case 25:
-            animateLeft(zeig1,1);
+            animateItem(zeig1,1);
             schritt++;
             break;
         case 26:
-            animateLeft(zeig1,2);
+            animateItem(zeig1,2);
             schritt++;
             break;
         case 27:
-            animateLeft(zeig1,3);
+            animateItem(zeig1,3);
             schritt++;
             break;
         case 28:
-            animateLeft(zeig1,4);
+            animateItem(zeig1,4);
             schritt++;
             break;
         case 29:
-            animateLeft(zeig1,5);
+            animateItem(zeig1,5);
             schritt++;
             break;
         case 30:
             setDivHalf(zeig1);
-            animateLeft(zeig1,6);
+            animateItem(zeig1,6);
             setDivHalf(zeig2);
-            animateLeft(zeig2,6.5);
+            animateItem(zeig2,6.5);
             schritt++;
             break;
         case 31:
             setDivHalf(pivot);
-            animateLeft(pivot,7.5);
-            animateLeft(zeig1,7);
+            animateItem(pivot,7.5);
+            animateItem(zeig1,7);
             setZeig2Normal();
-            animateLeft(zeig2,6);
+            animateItem(zeig2,6);
             schritt++;
             break;
         case 32:
@@ -363,34 +363,34 @@ function algo() {
             schritt++;
             break;
         case 39:
-            animateLeft(zeig1,1);
+            animateItem(zeig1,1);
             schritt++;
             break;
         case 40:
-            animateLeft(zeig1,2);
+            animateItem(zeig1,2);
             schritt++;
             break;
         case 41:
-            animateLeft(zeig1,3);
+            animateItem(zeig1,3);
             schritt++;
             break;
         case 42:
-            animateLeft(zeig1,4);
+            animateItem(zeig1,4);
             schritt++;
             break;
         case 43:
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig1,5);
-            animateLeft(zeig2,5.5);
+            animateItem(zeig1,5);
+            animateItem(zeig2,5.5);
             schritt++;
             break;
         case 44:
             setDivHalf(pivot);
-            animateLeft(zeig1,6);
-            animateLeft(pivot,6.5);
+            animateItem(zeig1,6);
+            animateItem(pivot,6.5);
             setZeig2Normal();
-            animateLeft(zeig2,5);
+            animateItem(zeig2,5);
             schritt++;
             break;
         case 45:
@@ -428,30 +428,30 @@ function algo() {
             schritt++;
             break;
         case 52:
-            animateLeft(zeig1,1);
+            animateItem(zeig1,1);
             schritt++;
             break;
         case 53:
-            animateLeft(zeig1,2);
+            animateItem(zeig1,2);
             schritt++;
             break;
         case 54:
-            animateLeft(zeig1,3);
+            animateItem(zeig1,3);
             schritt++;
             break;
         case 55:
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig1,4);
-            animateLeft(zeig2,4.5);
+            animateItem(zeig1,4);
+            animateItem(zeig2,4.5);
             schritt++;
             break;
         case 56:
             setDivHalf(pivot);
-            animateLeft(zeig1,5);
-            animateLeft(pivot,5.5);
+            animateItem(zeig1,5);
+            animateItem(pivot,5.5);
             setZeig2Normal();
-            animateLeft(zeig2,4);
+            animateItem(zeig2,4);
             schritt++;
             break;
         case 57:
@@ -489,26 +489,26 @@ function algo() {
             schritt++;
             break;
         case 64:
-            animateLeft(zeig1,1);
+            animateItem(zeig1,1);
             schritt++;
             break;
         case 65:
-            animateLeft(zeig1,2);
+            animateItem(zeig1,2);
             schritt++;
             break;
         case 66:
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig1,3);
-            animateLeft(zeig2,3.5);
+            animateItem(zeig1,3);
+            animateItem(zeig2,3.5);
             schritt++;
             break;
         case 67:
             setDivHalf(pivot);
-            animateLeft(zeig1,4);
-            animateLeft(pivot,4.5);
+            animateItem(zeig1,4);
+            animateItem(pivot,4.5);
             setZeig2Normal();
-            animateLeft(zeig2,3);
+            animateItem(zeig2,3);
             schritt++;
             break;
         case 68:
@@ -546,22 +546,22 @@ function algo() {
             schritt++;
             break;
         case 75:
-            animateLeft(zeig1,1);
+            animateItem(zeig1,1);
             schritt++;
             break;
         case 76:
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig1,2);
-            animateLeft(zeig2,2.5);
+            animateItem(zeig1,2);
+            animateItem(zeig2,2.5);
             schritt++;
             break;
         case 77:
             setDivHalf(pivot);
-            animateLeft(zeig1,3);
-            animateLeft(pivot,3.5);
+            animateItem(zeig1,3);
+            animateItem(pivot,3.5);
             setZeig2Normal();
-            animateLeft(zeig2,2);
+            animateItem(zeig2,2);
             schritt++;
             break;
         case 78:
@@ -601,16 +601,16 @@ function algo() {
         case 85:
             setDivHalf(zeig1);
             setDivHalf(zeig2);
-            animateLeft(zeig1,1);
-            animateLeft(zeig2,1.5);
+            animateItem(zeig1,1);
+            animateItem(zeig2,1.5);
             schritt++;
             break;
         case 86:
             setDivHalf(pivot);
-            animateLeft(zeig1,2);
-            animateLeft(pivot,2.5);
+            animateItem(zeig1,2);
+            animateItem(pivot,2.5);
             setZeig2Normal();
-            animateLeft(zeig2,1);
+            animateItem(zeig2,1);
             schritt++;
             break;
         case 87:
@@ -651,10 +651,10 @@ function algo() {
             break;
         case 94:
             setDivHalf(pivot);
-            animateLeft(zeig1,1);
-            animateLeft(pivot,1.5);
+            animateItem(zeig1,1);
+            animateItem(pivot,1.5);
             setZeig2Normal();
-            animateLeft(zeig2,0);
+            animateItem(zeig2,0);
             schritt++;
             break;
         case 95:

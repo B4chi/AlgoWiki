@@ -144,6 +144,4 @@ function algo() {
 
 /*============ weitere Methoden für den speziellen Algorithmus ============*/
 
-function animateItem(div, pos) {
-    div.animate({"left": leftStart + widthNormal * (pos - 1) + 6});
-}
+

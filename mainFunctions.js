@@ -4,7 +4,7 @@ function disableButton(button) {
         "backgroundColor": "#757575"
     });
 }
-function animateLeft(div, pos) {
+function animateItem(div, pos) {
     div.animate({"left": leftStart + widthNormal * pos});
 }
 function enableResetButton() {
