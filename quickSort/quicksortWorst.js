@@ -169,6 +169,7 @@ function algo() {
     var zeig1 = $('#zeig1');
     var zeig2 = $('#zeig2');
     var pivot = $('#pivot');
+    var rahmen = $('#rahmenQS');
 
     switch (schritt) {
         case 1:
@@ -270,7 +271,7 @@ function algo() {
             break;
         case 20:
             setText('Danach werden die Vorgänge wiederholt, bis alle Zahlen vollständig sortiert sind.');
-            klammerAusblenden();
+            ausblenden(rahmen);
             schritt++;
             break;
         case 21:
@@ -343,7 +344,7 @@ function algo() {
             schritt++;
             break;
         case 35:
-            klammerAusblenden();
+            ausblenden(rahmen);
             schritt++;
             break;
         case 36:
@@ -408,7 +409,7 @@ function algo() {
             schritt++;
             break;
         case 48:
-            klammerAusblenden();
+            ausblenden(rahmen);
             schritt++;
             break;
         case 49:
@@ -469,7 +470,7 @@ function algo() {
             schritt++;
             break;
         case 60:
-            klammerAusblenden();
+            ausblenden(rahmen);
             schritt++;
             break;
         case 61:
@@ -526,7 +527,7 @@ function algo() {
             schritt++;
             break;
         case 71:
-            klammerAusblenden();
+            ausblenden(rahmen);
             schritt++;
             break;
         case 72:
@@ -579,7 +580,7 @@ function algo() {
             schritt++;
             break;
         case 81:
-            klammerAusblenden();
+            ausblenden(rahmen);
             schritt++;
             break;
         case 82:
@@ -628,7 +629,7 @@ function algo() {
             schritt++;
             break;
         case 90:
-            klammerAusblenden();
+            ausblenden(rahmen);
             schritt++;
             break;
         case 91:
@@ -672,7 +673,7 @@ function algo() {
             schritt++;
             break;
         case 98:
-            klammerAusblenden();
+            ausblenden(rahmen);
             schritt++;
             break;
         case 99:
@@ -685,7 +686,7 @@ function algo() {
             schritt++;
             break;
         case 101:
-            klammerAusblenden();
+            ausblenden(rahmen);
             setText('Alle Zahlen wurden vollständig abgearbeitet');
             schritt++;
             break;
@@ -738,8 +739,3 @@ function showKlammer(pos,wid) {
         "width": widthNormal * wid
     })
 }
-function klammerAusblenden() {
-    var rahmen = $('#rahmenQS');
-    rahmen.css({"display": "none"})
-}
-
