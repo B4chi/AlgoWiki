@@ -13,7 +13,7 @@ $(document).ready(function () {
     stylen();
 
     $('#buttonNext').click(function () {
-        buttonItertator();
+        algo();
     });
 
     $('#buttonReset').click(function () {
@@ -142,12 +142,12 @@ function stylen() {
     });
 
     disableButton(buttonReset);
-    buttonItertator();
+    algo();
 
 }
 
 
-function buttonItertator() {
+function algo() {
     var div5 = $('#div1');
     var div3 = $('#div2');
     var div4 = $('#div3');

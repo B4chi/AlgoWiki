@@ -13,7 +13,7 @@ $(document).ready(function () {
     stylen();
 
     $('#buttonNext').click(function () {
-        buttonItertator();
+        algo();
     });
 
     $('#buttonReset').click(function () {
@@ -211,7 +211,7 @@ function stylen() {
         "left": leftStart + (widthNormal * 8) / 2 - 120
     });
     disableButton(buttonReset);
-    buttonItertator();
+    algo();
 
 
 
@@ -219,7 +219,7 @@ function stylen() {
 }
 
 
-function buttonItertator() {
+function algo() {
     var div1 = $('#div1');
     var div2 = $('#div2');
     var div3 = $('#div3');

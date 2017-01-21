@@ -1,5 +1,6 @@
 
-var zaehler = 1;
+var schritt = 1;
+
 var topStart = 200;
 var leftStart = 300;
 var heightStart = 50;
@@ -9,7 +10,7 @@ $(document).ready(function () {
     stylen();
 
     $('#buttonNext').click(function () {
-        schritt();
+        algo();
     });
 
     $('#buttonReset').click(function () {
@@ -122,7 +123,7 @@ function stylen() {
 }
 
 
-function schritt() {
+function algo() {
     var div5 = $('#div1');
     var div3 = $('#div2');
     var div4 = $('#div3');
@@ -134,7 +135,7 @@ function schritt() {
     var div1 = $('#div9');
     var textField = $('.textField');
 
-    switch (zaehler) {
+    switch (schritt) {
         case 1:
 
     }
@@ -143,6 +144,6 @@ function schritt() {
 
 /*============ weitere Methoden für den speziellen Algorithmus ============*/
 
-function moveItem(div, pos) {
+function animateItem(div, pos) {
     div.animate({"left": leftStart + widthNormal * (pos - 1) + 6});
 }

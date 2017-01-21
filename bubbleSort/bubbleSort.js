@@ -1,5 +1,5 @@
 /**
- * Methoden für die Visualisierung des BubbleSort Algorithmus
+ * Created by Jo on 26.12.2016.
  */
 
 var schritt = 1;
@@ -13,7 +13,7 @@ $(document).ready(function () {
     stylen();
 
     $('#buttonNext').click(function () {
-        buttonItertator();
+        algo();
     });
 
     $('#buttonReset').click(function () {
@@ -129,12 +129,12 @@ function stylen() {
         "left": leftStart + (widthNormal * 9) / 2 - 120
     });
     disableButton(buttonReset);
-    buttonItertator();
+    algo();
 
 }
 
 
-function buttonItertator() {
+function algo() {
     var div5 = $('#div1');
     var div3 = $('#div2');
     var div4 = $('#div3');

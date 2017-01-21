@@ -13,7 +13,7 @@ $(document).ready(function () {
     stylen();
 
     $('#buttonNext').click(function () {
-        buttonItertator();
+        algo();
     });
     $('#buttonReset').click(function () {
         reset();
@@ -152,11 +152,11 @@ function stylen() {
         "width": widthNormal * 9
     });
     disableButton(buttonReset);
-    buttonItertator();
+    algo();
 
 }
 
-function buttonItertator() {
+function algo() {
     var div1 = $('#div1');
     var div2 = $('#div2');
     var div3 = $('#div3');

@@ -71,8 +71,8 @@ $(document).ready(function () {
         });
     });
 
-
     /* Codesegment zum einfügen neuer Algorithmen
+
      $('#ID des <li> Elements').click(function () {
      deselect();
      $('#ID des Listenelements in der Navigationsleiste').addClass('selected');
@@ -82,6 +82,7 @@ $(document).ready(function () {
             });
         });
      });
+
      */
 
 });
