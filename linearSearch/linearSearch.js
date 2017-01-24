@@ -156,7 +156,7 @@ function algo() {
     switch (schritt) {
 
         case 1:
-            setText("Lineare Suche sucht ein Element in einer Liste. In diesem Beispiel soll nach der 8 gesucht werden.");
+            setText("Lineare Suche sucht ein Element in einer Liste. In diesem Beispiel soll nach der Zahl 8 gesucht werden.");
             schritt++;
             break;
         case 2:
