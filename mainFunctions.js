@@ -1,6 +1,12 @@
 function animateItem(div, pos) {
     div.animate({"left": leftStart + widthNormal * pos});
 }
+
+function animateArrow(div, pos) {
+    div.animate({"left": leftStart + 6 + widthNormal * (pos - 1)});
+
+}
+
 function setGray(div) {
     div.css("backgroundColor", "#757575");
 }

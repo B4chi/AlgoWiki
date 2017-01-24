@@ -71,6 +71,18 @@ $(document).ready(function () {
         });
     });
 
+
+    $('#linearSearch').click(function () {
+        deselect();
+        $('#linearSearch').addClass('selected');
+        $('#content').animate({"opacity": 0}, "slow", function () {
+            $('#content').load("linearSearch/linearSearch.html", function () {
+                $('#content').animate({"opacity": 1}, "slow");
+            });
+        });
+    });
+
+
     /* Codesegment zum einfügen neuer Algorithmen
 
      $('#ID des <li> Elements').click(function () {
