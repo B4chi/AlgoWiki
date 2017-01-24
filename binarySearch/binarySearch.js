@@ -162,11 +162,11 @@ function algo() {
 
     switch (schritt) {
         case 1:
-            setText("Binary Search sucht ein Element in einer vorsortierten Liste. Der Algorithmus arbeitet rekursiv. In unserem Beispiel wollen wir nach der Zahl 6 suchen.");
+            setText("Binäre Suche sucht ein Element in einer vorsortierten Liste. Der Algorithmus arbeitet rekursiv. In unserem Beispiel wollen wir nach der Zahl 6 suchen.");
             schritt++;
             break;
         case 2:
-            setText("Zu Beginn steht der Zeiger auf dem mittlersten Element der Liste. Falls die Liste eine gerade Anzahl von Elementen besitzt wird das erste, der beiden in Frage kommenden Elemente gewählt.");
+            setText("Zu Beginn steht der Zeiger auf dem mittleren Element der Liste. Falls die Liste eine gerade Anzahl von Elementen besitzt wird das erste, der beiden in Frage kommenden Elemente gewählt.");
             moveArrow(arrow, 5);
             showArrow(arrow, "visible");
             schritt++;

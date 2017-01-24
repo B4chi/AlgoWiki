@@ -154,50 +154,55 @@ function algo() {
     var arrow = $('#arrowUP');
 
     switch (schritt) {
+
         case 1:
-            setText("Lineare Suche ist ein sehr ineffizienter, dafür jedoch auch sehr leicht verständlicher Algorithmus. Es wird jedes Element einer Liste mit einem gesuchten Wert verglichen.");
+            setText("Lineare Suche sucht ein Element in einer Liste. In diesem Beispiel soll nach der 8 gesucht werden.");
             schritt++;
             break;
         case 2:
+            setText("Der Algorithmus ist sehr leicht verständlich allerdings leider auch verhältnismäßig ineffizient.");
+            schritt++;
+            break;
+        case 3:
             showArrow(arrow, "visible");
             setText("Zu Berginn steht der Zeiger auf dem ersten Listenelement und vergleicht dieses mit dem gesuchten Wert. In diesem Fall mit der 8.");
             schritt++;
             break;
-        case 3:
+        case 4:
             setText("Wenn der Wert des aktuellen Elements ungleich dem gesuchten Wert ist, dann rückt der Zeiger auf das nächste Listenelement und wiederholt den Vorgang.");
             schritt++;
             break;
-        case 4:
+        case 5:
             setGray(div5);
             animateArrow(arrow, 2);
             schritt++;
             break;
-        case 5:
+        case 6:
             setGray(div3);
             animateArrow(arrow, 3);
             schritt++;
             break;
-        case 6:
+        case 7:
             setGray(div4);
             animateArrow(arrow, 4);
             schritt++;
             break;
-        case 7:
+        case 8:
             setGray(div7);
             animateArrow(arrow, 5);
             schritt++;
             break;
-        case 8:
+        case 9:
             setGray(div2);
             animateArrow(arrow, 6);
             setText("Wenn die beiden Werte übereinstimmen haben wir ein Ergebnis gefunden.");
             schritt++;
             break;
-        case 9:
+        case 10:
             setText("Die verbleibenden Elemente müssen nun nicht mehr betrachtet werden.");
             schritt++;
             break;
-        case 10:
+        case 11:
             setGray(div5);
             setGray(div3);
             setGray(div4);
@@ -208,11 +213,9 @@ function algo() {
             setGray(div1);
             schritt++;
             break;
-        case 11:
+        case 12:
             showArrow(arrow, "hidden");
             setText("Falls kein passender Wert gefunden wird, terminiert der Algorithmus wenn er die komplette Liste abgearbeitet hat.");
-
-
     }
 }
 

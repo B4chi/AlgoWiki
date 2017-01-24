@@ -108,6 +108,7 @@ function deselect() {
     $('#mergeSort').removeClass('selected');
     $('#searchAlgorithm').removeClass('selected');
     $('#binarySearch').removeClass('selected');
+    $('#linearSearch').removeClass('selected');
 
     // $('#ID des Listenelements in der Navigationsleiste').removeClass('selected');
 
